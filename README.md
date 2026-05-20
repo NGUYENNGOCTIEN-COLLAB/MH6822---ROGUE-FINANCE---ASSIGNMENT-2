@@ -192,4 +192,4 @@ Team contact details are recorded in `team.csv`.
 
 ## Recording
 
-Presentation recording: 
+Presentation recording: https://github.com/NGUYENNGOCTIEN-COLLAB/MH6822---ROGUE-FINANCE---ASSIGNMENT-2/blob/315f48862a4c64f95132beef08346718a2874ee0/mh6822_compliance_engine_submission/presentation.mp3
