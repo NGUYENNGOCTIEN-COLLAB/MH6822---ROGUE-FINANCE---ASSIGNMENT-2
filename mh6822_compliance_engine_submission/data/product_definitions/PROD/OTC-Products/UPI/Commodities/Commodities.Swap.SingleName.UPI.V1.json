@@ -1,0 +1,46 @@
+{
+  "AssetClass": "Commodities",
+  "InstrumentType": "Swap",
+  "UseCase": "SingleName",
+  "Level": "UPI",
+  "TemplateName": "Commodities.Swap.SingleName",
+  "UPI": "MSS5KMQ3PVLN4HW2YJ8F",
+  "Attributes": {
+    "NotionalCurrency": {
+      "type": "string",
+      "codeset": "ISOCurrencyCode",
+      "source_fields": [
+        "notional_currency"
+      ]
+    },
+    "NotionalAmount": {
+      "type": "number",
+      "minimum": 0,
+      "source_fields": [
+        "notional_amount"
+      ]
+    },
+    "UnderlyingCommodity": {
+      "type": "string",
+      "codeset": "CommodityCode",
+      "source_fields": [
+        "underlying_commodity"
+      ]
+    },
+    "Unit": {
+      "type": "string",
+      "minLength": 1,
+      "source_fields": [
+        "unit"
+      ]
+    },
+    "FixedPrice": {
+      "type": "number",
+      "minimum": 0,
+      "source_fields": [
+        "fixed_price"
+      ]
+    }
+  },
+  "SourceNote": "Local ANNA-DSB-style fixture for MH6822 Homework 2. Replace with cloned ANNA-DSB/Product-Definitions in production."
+}

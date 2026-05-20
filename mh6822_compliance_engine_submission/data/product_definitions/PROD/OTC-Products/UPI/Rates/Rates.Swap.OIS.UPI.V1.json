@@ -1,0 +1,65 @@
+{
+  "AssetClass": "Rates",
+  "InstrumentType": "Swap",
+  "UseCase": "OIS",
+  "Level": "UPI",
+  "TemplateName": "Rates.Swap.OIS",
+  "UPI": "ROIS5QY8K3PWLT2NFM7H",
+  "Attributes": {
+    "NotionalCurrency": {
+      "type": "string",
+      "codeset": "ISOCurrencyCode",
+      "source_fields": [
+        "notional_currency"
+      ]
+    },
+    "NotionalAmount": {
+      "type": "number",
+      "minimum": 0,
+      "source_fields": [
+        "notional_amount"
+      ]
+    },
+    "ReferenceRate": {
+      "type": "string",
+      "codeset": "FpmlRatesReferenceRate",
+      "source_fields": [
+        "reference_rate"
+      ]
+    },
+    "ReferenceRateTermValue": {
+      "type": "integer",
+      "minimum": -999,
+      "maximum": 999,
+      "not": 0,
+      "source_fields": [
+        "reference_rate_term_value"
+      ]
+    },
+    "ReferenceRateTermUnit": {
+      "type": "string",
+      "enum": [
+        "DAYS",
+        "WEEK",
+        "MNTH",
+        "YEAR"
+      ],
+      "source_fields": [
+        "reference_rate_term_unit"
+      ]
+    },
+    "DayCountConvention": {
+      "type": "string",
+      "enum": [
+        "ACT/360",
+        "ACT/365",
+        "30/360"
+      ],
+      "source_fields": [
+        "day_count_convention"
+      ],
+      "required": false
+    }
+  },
+  "SourceNote": "Local ANNA-DSB-style fixture for MH6822 Homework 2. Replace with cloned ANNA-DSB/Product-Definitions in production."
+}

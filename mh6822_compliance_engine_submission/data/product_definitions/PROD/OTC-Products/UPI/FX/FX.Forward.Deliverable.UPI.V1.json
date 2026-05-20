@@ -1,0 +1,50 @@
+{
+  "AssetClass": "FX",
+  "InstrumentType": "Forward",
+  "UseCase": "Deliverable",
+  "Level": "UPI",
+  "TemplateName": "FX.Forward.Deliverable",
+  "UPI": "FDV6KQM3PVLN5HW2YJ8F",
+  "Attributes": {
+    "NotionalCurrency": {
+      "type": "string",
+      "codeset": "ISOCurrencyCode",
+      "source_fields": [
+        "notional_currency"
+      ]
+    },
+    "UnderlyingCurrencyPair": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}/[A-Z]{3}$",
+      "source_fields": [
+        "underlying_currency_pair"
+      ]
+    },
+    "NotionalAmount": {
+      "type": "number",
+      "minimum": 0,
+      "source_fields": [
+        "notional_amount"
+      ]
+    },
+    "ForwardRate": {
+      "type": "number",
+      "minimum": 0,
+      "source_fields": [
+        "forward_rate"
+      ]
+    },
+    "DeliveryType": {
+      "type": "string",
+      "enum": [
+        "CASH",
+        "PHYS",
+        "OPTL"
+      ],
+      "source_fields": [
+        "delivery_type"
+      ]
+    }
+  },
+  "SourceNote": "Local ANNA-DSB-style fixture for MH6822 Homework 2. Replace with cloned ANNA-DSB/Product-Definitions in production."
+}

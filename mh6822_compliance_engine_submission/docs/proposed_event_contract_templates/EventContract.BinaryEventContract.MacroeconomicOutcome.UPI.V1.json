@@ -1,0 +1,207 @@
+{
+  "AssetClass": "EventContract",
+  "InstrumentType": "BinaryEventContract",
+  "UseCase": "MacroeconomicOutcome",
+  "Level": "UPI",
+  "TemplateName": "EventContract.BinaryEventContract.MacroeconomicOutcome",
+  "UPI": "EVT0BIN0MAC000000001",
+  "Status": "PROPOSED_NOT_ACTIVE",
+  "ProposalCitation": "MH6822 Homework 2 Module 4 (May 2026); see docs/module4_classification_analysis.md",
+  "TaxonomyExtension": true,
+  "SupersedesNoProductDefinition": [
+    "EventContract.BinaryEventContract.PoliticalOutcome",
+    "EventContract.BinaryEventContract.MacroeconomicOutcome",
+    "EventContract.BinaryEventContract.RegulatoryDecisionOutcome",
+    "EventContract.BinaryEventContract.MonetaryPolicyOutcome"
+  ],
+  "Attributes": {
+    "EventDescription": {
+      "type": "string",
+      "minLength": 16,
+      "maxLength": 256,
+      "source_fields": [
+        "event_description",
+        "description"
+      ],
+      "required": true,
+      "semantic_note": "Plain-language event description, no acronyms without expansion."
+    },
+    "EventType": {
+      "type": "string",
+      "enum": [
+        "ELECTION_OUTCOME",
+        "MACROECONOMIC_THRESHOLD",
+        "REGULATORY_DECISION",
+        "MONETARY_POLICY_DECISION",
+        "CLIMATE_THRESHOLD",
+        "SPORTS_OUTCOME"
+      ],
+      "source_fields": [
+        "event_type"
+      ],
+      "required": true,
+      "semantic_note": "Drives the regulatory routing in Module 3."
+    },
+    "JurisdictionOfEvent": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}$",
+      "source_fields": [
+        "jurisdiction_of_event"
+      ],
+      "required": true,
+      "semantic_note": "ISO 3166-1 alpha-2. Drives non-CFTC regime applicability."
+    },
+    "SettlementDate": {
+      "type": "string",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+      "source_fields": [
+        "settlement_date",
+        "expiry_date",
+        "maturity_date"
+      ],
+      "required": true,
+      "semantic_note": "Replaces NotionalSchedule.MaturityDate semantics for binary payoff contracts."
+    },
+    "NumberOfContracts": {
+      "type": "integer",
+      "minimum": 1,
+      "source_fields": [
+        "number_of_contracts"
+      ],
+      "required": true
+    },
+    "ContractSize": {
+      "type": "number",
+      "minimum": 0,
+      "not": 0,
+      "source_fields": [
+        "contract_size"
+      ],
+      "required": true,
+      "semantic_note": "Per-contract payout in settlement currency on YES outcome."
+    },
+    "EntryPrice": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "source_fields": [
+        "entry_price"
+      ],
+      "required": true,
+      "semantic_note": "Implied probability at execution; constrained to (0,1)."
+    },
+    "SettlementCurrency": {
+      "type": "string",
+      "codeset": "ISOCurrencyCode",
+      "source_fields": [
+        "notional_currency",
+        "settlement_currency"
+      ],
+      "required": true,
+      "semantic_note": "Validated against ISO 4217 in this engine. Stablecoin settlement, such as USDC, would require a separate controlled vocabulary before production activation."
+    },
+    "HedgingExposureType": {
+      "type": "string",
+      "enum": [
+        "HEDGING",
+        "SPECULATIVE",
+        "HEDGING_SPECULATIVE_MIXED",
+        "MARKET_MAKING"
+      ],
+      "source_fields": [
+        "counterparty_exposure_type"
+      ],
+      "required": true,
+      "semantic_note": "Schema extension proposal: this attribute does not exist in current UPI taxonomy and is the substantive contribution of Module 4. Determines whether the position is reportable to the SDR or routed to gambling-regulation under the host jurisdiction."
+    },
+    "PlatformType": {
+      "type": "string",
+      "enum": [
+        "CFTC_REGULATED_DCM",
+        "DCM",
+        "EU_REGULATED_MTF",
+        "MAS_RECOGNISED_VENUE",
+        "OFFSHORE_REGULATED",
+        "OFFSHORE_UNREGULATED",
+        "DECENTRALISED_BLOCKCHAIN_PLATFORM"
+      ],
+      "source_fields": [
+        "platform_type"
+      ],
+      "required": true,
+      "semantic_note": "Structured enum (not free text) to support deterministic regime routing in Module 3. The CFTC CONDITIONAL flag triggers on CFTC_REGULATED_DCM or DCM."
+    },
+    "UnderlyingEconomicExposure": {
+      "type": "string",
+      "minLength": 16,
+      "source_fields": [
+        "underlying_economic_exposure"
+      ],
+      "required": false,
+      "semantic_note": "Free-text justification for HedgingExposureType. Not parsed but retained for SDR audit."
+    },
+    "ResolutionSource": {
+      "type": "string",
+      "minLength": 3,
+      "source_fields": [
+        "resolution_source",
+        "event_authority"
+      ],
+      "required": false,
+      "semantic_note": "Named public source or oracle used to resolve the event, e.g. BLS, ESMA, MAS, official election authority."
+    },
+    "OutcomeMetric": {
+      "type": "string",
+      "minLength": 3,
+      "source_fields": [
+        "outcome_metric"
+      ],
+      "required": false,
+      "semantic_note": "Observable metric such as vote share, CPI value, policy decision or regulatory classification."
+    },
+    "ThresholdOperator": {
+      "type": "string",
+      "enum": [
+        ">",
+        ">=",
+        "<",
+        "<=",
+        "=",
+        "IN_SET"
+      ],
+      "source_fields": [
+        "threshold_operator"
+      ],
+      "required": false,
+      "semantic_note": "Required for threshold-type event contracts."
+    },
+    "ParticipantRestrictionType": {
+      "type": "string",
+      "enum": [
+        "ProfessionalOnly",
+        "RetailAllowed",
+        "HedgerOnly",
+        "JurisdictionRestricted"
+      ],
+      "source_fields": [
+        "participant_restriction_type"
+      ],
+      "required": false,
+      "semantic_note": "Proposed field to separate hedging/professional use from open retail wagering."
+    }
+  },
+  "SemanticConstraints": {
+    "MustReferenceObservableSource": {
+      "rule": "EventDescription must reference a public, named, third-party data source (e.g. Bundestag, BLS, ESMA, MAS, IPCC, FIFA) sufficient for unambiguous resolution. Engine implementation: surface as a manual-review flag rather than auto-fail, since natural-language enforcement is out of scope.",
+      "rationale": "Blocks contracts on unfalsifiable propositions and aligns with the ISDA Credit Definitions practice on Successor / Reference Entity identification."
+    },
+    "EntryPriceWithinUnitInterval": {
+      "rule": "0 < EntryPrice < 1 strictly; 0 and 1 are degenerate cases not reportable as binaries.",
+      "rationale": "Filters mis-keyed quotes."
+    },
+    "HedgingExposureMustBeJustified": {
+      "rule": "If HedgingExposureType == HEDGING, UnderlyingEconomicExposure must be present and reference an identifiable balance-sheet exposure of the reporting counterparty.",
+      "rationale": "Prevents trivially flagging speculative positions as hedges to access reduced-margin treatment."
+    }
+  }
+}

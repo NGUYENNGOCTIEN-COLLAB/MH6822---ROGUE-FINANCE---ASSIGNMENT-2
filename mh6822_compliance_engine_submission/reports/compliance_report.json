@@ -1,0 +1,4141 @@
+{
+  "metadata": {
+    "engine": "MH6822 OTC Derivatives Compliance Engine",
+    "generated_at_utc": "2026-05-17T14:27:39.528855+00:00",
+    "trade_count": 34,
+    "regimes": [
+      "CFTC",
+      "EMIR",
+      "MAS"
+    ]
+  },
+  "portfolio_summary": {
+    "by_classification": {
+      "CONVENTIONAL_DERIVATIVE": 30,
+      "NOVEL_INSTRUMENT_NO_TAXONOMY": 4
+    },
+    "by_upi_status": {
+      "FOUND": 25,
+      "INVALID_ATTRIBUTES": 5,
+      "NO_PRODUCT_DEFINITION": 4
+    },
+    "by_regime": {
+      "CFTC": {
+        "NONCOMPLIANT": 27,
+        "COMPLIANT": 3,
+        "CONDITIONAL": 3,
+        "NOT_APPLICABLE": 1
+      },
+      "EMIR": {
+        "NONCOMPLIANT": 28,
+        "NOT_APPLICABLE": 4,
+        "COMPLIANT": 2
+      },
+      "MAS": {
+        "NONCOMPLIANT": 28,
+        "NOT_APPLICABLE": 4,
+        "COMPLIANT": 2
+      }
+    },
+    "top_error_fields": {
+      "EMIR.variation_margin_posted": 16,
+      "MAS.variation_margin_posted": 16,
+      "EMIR.collateral_portfolio_code": 15,
+      "EMIR.initial_margin_posted": 15,
+      "MAS.collateral_portfolio_code": 15,
+      "MAS.initial_margin_posted": 15,
+      "CFTC.other_counterparty_lei": 13,
+      "EMIR.other_counterparty_lei": 13,
+      "MAS.other_counterparty_lei": 13,
+      "CFTC.reporting_counterparty_lei": 11,
+      "EMIR.reporting_counterparty_lei": 11,
+      "MAS.reporting_counterparty_lei": 11,
+      "CFTC.upi": 10,
+      "EMIR.upi": 10,
+      "MAS.upi": 10,
+      "CFTC.upi_attribute": 6,
+      "EMIR.upi_attribute": 6,
+      "MAS.upi_attribute": 6,
+      "CFTC.parse": 2,
+      "EMIR.parse": 2
+    },
+    "top_warning_fields": {
+      "UPI.reference_rate": 1,
+      "CFTC.reference_rate": 1,
+      "EMIR.reference_rate": 1,
+      "MAS.reference_rate": 1
+    },
+    "by_finding_type": {
+      "IDENTIFIER_ERROR": 27,
+      "FIELD_VALIDATION_ERROR": 1,
+      "TAXONOMY_GAP_WITH_REGULATORY_NEXUS": 3,
+      "JURISDICTIONAL_SCOPE_GAP": 1,
+      "NO_ERROR": 2
+    }
+  },
+  "trades": [
+    {
+      "trade_id": "T001",
+      "asset_class": "Rates",
+      "instrument_type": "Swap",
+      "use_case": "Fixed_Float",
+      "finding_type": "IDENTIFIER_ERROR",
+      "module1_parse": {
+        "trade_id": "T001",
+        "parse_status": "SUCCESS",
+        "asset_class": "Rates",
+        "instrument_type": "Swap",
+        "use_case": "Fixed_Float",
+        "classification_flag": "CONVENTIONAL_DERIVATIVE",
+        "parse_errors": [],
+        "classified_fields": {
+          "notional_currency": "USD",
+          "notional_amount": 50000000,
+          "cleared": true,
+          "uti": "5493001KJTIIGC8Y1R1220241219TRD00001",
+          "execution_timestamp": "2024-12-19T09:35:00Z",
+          "effective_date": "2024-12-21",
+          "maturity_date": "2029-12-21",
+          "action_type": "NEW",
+          "platform": "SEF",
+          "reporting_counterparty_lei": "5493001KJTIIGC8Y1R12",
+          "other_counterparty_lei": "2138002TXD6KSZ3V5X27"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T001",
+        "status": "FOUND",
+        "matched_template": "Rates.Swap.Fixed_Float",
+        "upi_code": "RFF7VYZQK48LJD3WXM91",
+        "classification_note": null,
+        "validation_errors": [],
+        "warnings": []
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T001",
+          "regime": "CFTC",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "other_counterparty_lei: LEI '2138002TXD6KSZ3V5X27' has invalid MOD 97-10 check digits; expected 26"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared"
+          ],
+          "explanation": "Trade fails CFTC on other_counterparty_lei; remediate before resubmission."
+        },
+        "EMIR": {
+          "trade_id": "T001",
+          "regime": "EMIR",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "other_counterparty_lei: LEI '2138002TXD6KSZ3V5X27' has invalid MOD 97-10 check digits; expected 26"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails EMIR on other_counterparty_lei; remediate before resubmission."
+        },
+        "MAS": {
+          "trade_id": "T001",
+          "regime": "MAS",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "other_counterparty_lei: LEI '2138002TXD6KSZ3V5X27' has invalid MOD 97-10 check digits; expected 26"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails MAS on other_counterparty_lei; remediate before resubmission."
+        }
+      }
+    },
+    {
+      "trade_id": "T002",
+      "asset_class": "Credit",
+      "instrument_type": "Swap",
+      "use_case": "Corporate",
+      "finding_type": "IDENTIFIER_ERROR",
+      "module1_parse": {
+        "trade_id": "T002",
+        "parse_status": "SUCCESS",
+        "asset_class": "Credit",
+        "instrument_type": "Swap",
+        "use_case": "Corporate",
+        "classification_flag": "CONVENTIONAL_DERIVATIVE",
+        "parse_errors": [],
+        "classified_fields": {
+          "notional_currency": "EUR",
+          "notional_amount": 10000000,
+          "cleared": false,
+          "uti": "VGRQXHF3J8VDLUA7XE9220250115CDS0001",
+          "execution_timestamp": "2025-01-15T14:22:00Z",
+          "effective_date": "2025-01-17",
+          "maturity_date": "2030-01-17",
+          "action_type": "NEW",
+          "platform": "VOICE",
+          "reporting_counterparty_lei": "VGRQXHF3J8VDLUA7XE92",
+          "other_counterparty_lei": "9695009AXSRNHZE85Y20"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T002",
+        "status": "FOUND",
+        "matched_template": "Credit.Swap.Corporate",
+        "upi_code": "CCO8MQK7VPLN4WHF2YJ3",
+        "classification_note": null,
+        "validation_errors": [],
+        "warnings": []
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T002",
+          "regime": "CFTC",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "other_counterparty_lei: LEI '9695009AXSRNHZE85Y20' has invalid MOD 97-10 check digits; expected 38"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared"
+          ],
+          "explanation": "Trade fails CFTC on other_counterparty_lei; remediate before resubmission."
+        },
+        "EMIR": {
+          "trade_id": "T002",
+          "regime": "EMIR",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "other_counterparty_lei: LEI '9695009AXSRNHZE85Y20' has invalid MOD 97-10 check digits; expected 38",
+            "variation_margin_posted: must not be negative (got -15000)"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails EMIR on 2 fields (first: other_counterparty_lei); remediate all flagged fields before resubmission."
+        },
+        "MAS": {
+          "trade_id": "T002",
+          "regime": "MAS",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "other_counterparty_lei: LEI '9695009AXSRNHZE85Y20' has invalid MOD 97-10 check digits; expected 38",
+            "variation_margin_posted: must not be negative (got -15000)"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails MAS on 2 fields (first: other_counterparty_lei); remediate all flagged fields before resubmission."
+        }
+      }
+    },
+    {
+      "trade_id": "T003",
+      "asset_class": "FX",
+      "instrument_type": "Forward",
+      "use_case": "NDF",
+      "finding_type": "IDENTIFIER_ERROR",
+      "module1_parse": {
+        "trade_id": "T003",
+        "parse_status": "SUCCESS",
+        "asset_class": "FX",
+        "instrument_type": "Forward",
+        "use_case": "NDF",
+        "classification_flag": "CONVENTIONAL_DERIVATIVE",
+        "parse_errors": [],
+        "classified_fields": {
+          "notional_currency": "USD",
+          "notional_amount": 20000000,
+          "cleared": false,
+          "uti": "1VUV7VQFKUOQSJ21A20820250210FWD0001",
+          "execution_timestamp": "2025-02-10T11:00:00Z",
+          "effective_date": "2025-02-12",
+          "maturity_date": "2025-08-12",
+          "action_type": "NEW",
+          "platform": "VOICE",
+          "reporting_counterparty_lei": "1VUV7VQFKUOQSJ21A208",
+          "other_counterparty_lei": "4R3ZURLYISNNNMHMK608"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T003",
+        "status": "FOUND",
+        "matched_template": "FX.Forward.NDF",
+        "upi_code": "FND8KQM3PVLN4HW2YJ7F",
+        "classification_note": null,
+        "validation_errors": [],
+        "warnings": []
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T003",
+          "regime": "CFTC",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "other_counterparty_lei: LEI '4R3ZURLYISNNNMHMK608' has invalid MOD 97-10 check digits; expected 62"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared"
+          ],
+          "explanation": "Trade fails CFTC on other_counterparty_lei; remediate before resubmission."
+        },
+        "EMIR": {
+          "trade_id": "T003",
+          "regime": "EMIR",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "collateral_portfolio_code: mandatory collateral field is missing or null",
+            "initial_margin_posted: mandatory collateral field is missing or null",
+            "other_counterparty_lei: LEI '4R3ZURLYISNNNMHMK608' has invalid MOD 97-10 check digits; expected 62",
+            "variation_margin_posted: mandatory collateral field is missing or null"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails EMIR on 4 fields (first: collateral_portfolio_code); remediate all flagged fields before resubmission."
+        },
+        "MAS": {
+          "trade_id": "T003",
+          "regime": "MAS",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "collateral_portfolio_code: mandatory collateral field is missing or null",
+            "initial_margin_posted: mandatory collateral field is missing or null",
+            "other_counterparty_lei: LEI '4R3ZURLYISNNNMHMK608' has invalid MOD 97-10 check digits; expected 62",
+            "variation_margin_posted: mandatory collateral field is missing or null"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails MAS on 4 fields (first: collateral_portfolio_code); remediate all flagged fields before resubmission."
+        }
+      }
+    },
+    {
+      "trade_id": "T004",
+      "asset_class": "Equity",
+      "instrument_type": "Option",
+      "use_case": "SingleName_Put",
+      "finding_type": "IDENTIFIER_ERROR",
+      "module1_parse": {
+        "trade_id": "T004",
+        "parse_status": "SUCCESS",
+        "asset_class": "Equity",
+        "instrument_type": "Option",
+        "use_case": "SingleName_Put",
+        "classification_flag": "CONVENTIONAL_DERIVATIVE",
+        "parse_errors": [],
+        "classified_fields": {
+          "notional_currency": "USD",
+          "notional_amount": 5000000,
+          "cleared": false,
+          "uti": "5493001KJTIIGC8Y1R1220250301EQ00001",
+          "execution_timestamp": "2025-03-01T15:30:00Z",
+          "effective_date": "2025-03-03",
+          "maturity_date": "2025-09-19",
+          "action_type": "NEW",
+          "platform": "VOICE",
+          "reporting_counterparty_lei": "5493001KJTIIGC8Y1R12",
+          "other_counterparty_lei": "MISSING_LEI"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T004",
+        "status": "FOUND",
+        "matched_template": "Equity.Option.SingleName_Put",
+        "upi_code": "EOP9KMQ3PVLN4HW2YJ8F",
+        "classification_note": null,
+        "validation_errors": [],
+        "warnings": []
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T004",
+          "regime": "CFTC",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "other_counterparty_lei: LEI 'MISSING_LEI' must be 20 characters: 18 uppercase alphanumeric plus 2 numeric check digits"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared"
+          ],
+          "explanation": "Trade fails CFTC on other_counterparty_lei; remediate before resubmission."
+        },
+        "EMIR": {
+          "trade_id": "T004",
+          "regime": "EMIR",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "collateral_portfolio_code: mandatory collateral field is missing or null",
+            "initial_margin_posted: mandatory collateral field is missing or null",
+            "other_counterparty_lei: LEI 'MISSING_LEI' must be 20 characters: 18 uppercase alphanumeric plus 2 numeric check digits",
+            "variation_margin_posted: mandatory collateral field is missing or null"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails EMIR on 4 fields (first: collateral_portfolio_code); remediate all flagged fields before resubmission."
+        },
+        "MAS": {
+          "trade_id": "T004",
+          "regime": "MAS",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "collateral_portfolio_code: mandatory collateral field is missing or null",
+            "initial_margin_posted: mandatory collateral field is missing or null",
+            "other_counterparty_lei: LEI 'MISSING_LEI' must be 20 characters: 18 uppercase alphanumeric plus 2 numeric check digits",
+            "variation_margin_posted: mandatory collateral field is missing or null"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails MAS on 4 fields (first: collateral_portfolio_code); remediate all flagged fields before resubmission."
+        }
+      }
+    },
+    {
+      "trade_id": "T005",
+      "asset_class": "Rates",
+      "instrument_type": "Swap",
+      "use_case": "Fixed_Float",
+      "finding_type": "IDENTIFIER_ERROR",
+      "module1_parse": {
+        "trade_id": "T005",
+        "parse_status": "SUCCESS",
+        "asset_class": "Rates",
+        "instrument_type": "Swap",
+        "use_case": "Fixed_Float",
+        "classification_flag": "CONVENTIONAL_DERIVATIVE",
+        "parse_errors": [],
+        "classified_fields": {
+          "notional_currency": "GBP",
+          "notional_amount": 75000000,
+          "cleared": true,
+          "uti": "2138002TXD6KSZ3V5X2720250115IRS0001",
+          "execution_timestamp": "2025-01-15T09:00:00Z",
+          "effective_date": "2025-01-17",
+          "maturity_date": "2035-01-17",
+          "action_type": "NEW",
+          "platform": "SEF",
+          "reporting_counterparty_lei": "2138002TXD6KSZ3V5X27",
+          "other_counterparty_lei": "VGRQXHF3J8VDLUA7XE92"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T005",
+        "status": "FOUND",
+        "matched_template": "Rates.Swap.Fixed_Float",
+        "upi_code": "RFF7VYZQK48LJD3WXM91",
+        "classification_note": null,
+        "validation_errors": [],
+        "warnings": [
+          "reference_rate='GBP-LIBOR-BBA' references LIBOR; deprecated benchmark (retained as warning for legacy trade handling per FCA / Federal Reserve cessation guidance, 30 June 2023)"
+        ]
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T005",
+          "regime": "CFTC",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "reporting_counterparty_lei: LEI '2138002TXD6KSZ3V5X27' has invalid MOD 97-10 check digits; expected 26"
+          ],
+          "warnings": [
+            "reference_rate='GBP-LIBOR-BBA' references LIBOR; deprecated benchmark (retained as warning for legacy trade handling per FCA / Federal Reserve cessation guidance, 30 June 2023)"
+          ],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared"
+          ],
+          "explanation": "Trade fails CFTC on reporting_counterparty_lei; remediate before resubmission."
+        },
+        "EMIR": {
+          "trade_id": "T005",
+          "regime": "EMIR",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "reporting_counterparty_lei: LEI '2138002TXD6KSZ3V5X27' has invalid MOD 97-10 check digits; expected 26"
+          ],
+          "warnings": [
+            "reference_rate='GBP-LIBOR-BBA' references LIBOR; deprecated benchmark (retained as warning for legacy trade handling per FCA / Federal Reserve cessation guidance, 30 June 2023)"
+          ],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails EMIR on reporting_counterparty_lei; remediate before resubmission."
+        },
+        "MAS": {
+          "trade_id": "T005",
+          "regime": "MAS",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "reporting_counterparty_lei: LEI '2138002TXD6KSZ3V5X27' has invalid MOD 97-10 check digits; expected 26"
+          ],
+          "warnings": [
+            "reference_rate='GBP-LIBOR-BBA' references LIBOR; deprecated benchmark (retained as warning for legacy trade handling per FCA / Federal Reserve cessation guidance, 30 June 2023)"
+          ],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails MAS on reporting_counterparty_lei; remediate before resubmission."
+        }
+      }
+    },
+    {
+      "trade_id": "T006",
+      "asset_class": "Rates",
+      "instrument_type": "Swap",
+      "use_case": "Basis",
+      "finding_type": "IDENTIFIER_ERROR",
+      "module1_parse": {
+        "trade_id": "T006",
+        "parse_status": "SUCCESS",
+        "asset_class": "Rates",
+        "instrument_type": "Swap",
+        "use_case": "Basis",
+        "classification_flag": "CONVENTIONAL_DERIVATIVE",
+        "parse_errors": [],
+        "classified_fields": {
+          "notional_currency": "EUR",
+          "notional_amount": 100000000,
+          "cleared": false,
+          "execution_timestamp": "2025-04-01T10:15:00Z",
+          "effective_date": "2025-04-03",
+          "maturity_date": "2030-04-03",
+          "action_type": "NEW",
+          "platform": "VOICE",
+          "reporting_counterparty_lei": "9695009AXSRNHZE85Y20",
+          "other_counterparty_lei": "1VUV7VQFKUOQSJ21A208"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T006",
+        "status": "FOUND",
+        "matched_template": "Rates.Swap.Basis",
+        "upi_code": "RBA8JLN4XPM2QHK7VTW3",
+        "classification_note": null,
+        "validation_errors": [],
+        "warnings": []
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T006",
+          "regime": "CFTC",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "reporting_counterparty_lei: LEI '9695009AXSRNHZE85Y20' has invalid MOD 97-10 check digits; expected 38",
+            "uti: UTI is missing"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared"
+          ],
+          "explanation": "Trade fails CFTC on 2 fields (first: reporting_counterparty_lei); remediate all flagged fields before resubmission."
+        },
+        "EMIR": {
+          "trade_id": "T006",
+          "regime": "EMIR",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "collateral_portfolio_code: mandatory collateral field is missing or null",
+            "initial_margin_posted: mandatory collateral field is missing or null",
+            "reporting_counterparty_lei: LEI '9695009AXSRNHZE85Y20' has invalid MOD 97-10 check digits; expected 38",
+            "uti: UTI is missing",
+            "variation_margin_posted: mandatory collateral field is missing or null"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails EMIR on 5 fields (first: collateral_portfolio_code); remediate all flagged fields before resubmission."
+        },
+        "MAS": {
+          "trade_id": "T006",
+          "regime": "MAS",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "collateral_portfolio_code: mandatory collateral field is missing or null",
+            "initial_margin_posted: mandatory collateral field is missing or null",
+            "reporting_counterparty_lei: LEI '9695009AXSRNHZE85Y20' has invalid MOD 97-10 check digits; expected 38",
+            "uti: UTI is missing",
+            "variation_margin_posted: mandatory collateral field is missing or null"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails MAS on 5 fields (first: collateral_portfolio_code); remediate all flagged fields before resubmission."
+        }
+      }
+    },
+    {
+      "trade_id": "T007",
+      "asset_class": "Commodities",
+      "instrument_type": "Swap",
+      "use_case": "SingleName",
+      "finding_type": "IDENTIFIER_ERROR",
+      "module1_parse": {
+        "trade_id": "T007",
+        "parse_status": "SUCCESS",
+        "asset_class": "Commodities",
+        "instrument_type": "Swap",
+        "use_case": "SingleName",
+        "classification_flag": "CONVENTIONAL_DERIVATIVE",
+        "parse_errors": [],
+        "classified_fields": {
+          "notional_currency": "XAU",
+          "notional_amount": 5000,
+          "cleared": false,
+          "uti": "4R3ZURLYISNNNMHMK60820250506COM0001",
+          "execution_timestamp": "2025-05-06T13:45:00Z",
+          "effective_date": "2025-05-08",
+          "maturity_date": "2026-05-08",
+          "action_type": "NEW",
+          "platform": "VOICE",
+          "reporting_counterparty_lei": "4R3ZURLYISNNNMHMK608",
+          "other_counterparty_lei": "5493001KJTIIGC8Y1R12"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T007",
+        "status": "FOUND",
+        "matched_template": "Commodities.Swap.SingleName",
+        "upi_code": "MSS5KMQ3PVLN4HW2YJ8F",
+        "classification_note": null,
+        "validation_errors": [],
+        "warnings": []
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T007",
+          "regime": "CFTC",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "reporting_counterparty_lei: LEI '4R3ZURLYISNNNMHMK608' has invalid MOD 97-10 check digits; expected 62"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared"
+          ],
+          "explanation": "Trade fails CFTC on reporting_counterparty_lei; remediate before resubmission."
+        },
+        "EMIR": {
+          "trade_id": "T007",
+          "regime": "EMIR",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "collateral_portfolio_code: mandatory collateral field is missing or null",
+            "initial_margin_posted: mandatory collateral field is missing or null",
+            "reporting_counterparty_lei: LEI '4R3ZURLYISNNNMHMK608' has invalid MOD 97-10 check digits; expected 62",
+            "variation_margin_posted: mandatory collateral field is missing or null"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails EMIR on 4 fields (first: collateral_portfolio_code); remediate all flagged fields before resubmission."
+        },
+        "MAS": {
+          "trade_id": "T007",
+          "regime": "MAS",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "collateral_portfolio_code: mandatory collateral field is missing or null",
+            "initial_margin_posted: mandatory collateral field is missing or null",
+            "reporting_counterparty_lei: LEI '4R3ZURLYISNNNMHMK608' has invalid MOD 97-10 check digits; expected 62",
+            "variation_margin_posted: mandatory collateral field is missing or null"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails MAS on 4 fields (first: collateral_portfolio_code); remediate all flagged fields before resubmission."
+        }
+      }
+    },
+    {
+      "trade_id": "T008",
+      "asset_class": "Rates",
+      "instrument_type": "Option",
+      "use_case": "Swaption",
+      "finding_type": "IDENTIFIER_ERROR",
+      "module1_parse": {
+        "trade_id": "T008",
+        "parse_status": "SUCCESS",
+        "asset_class": "Rates",
+        "instrument_type": "Option",
+        "use_case": "Swaption",
+        "classification_flag": "CONVENTIONAL_DERIVATIVE",
+        "parse_errors": [],
+        "classified_fields": {
+          "notional_currency": "USD",
+          "notional_amount": 200000000,
+          "cleared": false,
+          "uti": "2138002TXD6KSZ3V5X2720250301SWN0001",
+          "execution_timestamp": "2025-03-01T08:00:00Z",
+          "effective_date": "2025-03-03",
+          "maturity_date": "2025-09-01",
+          "action_type": "NEW",
+          "platform": "VOICE",
+          "reporting_counterparty_lei": "2138002TXD6KSZ3V5X27",
+          "other_counterparty_lei": "VGRQXHF3J8VDLUA7XE92"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T008",
+        "status": "FOUND",
+        "matched_template": "Rates.Option.Swaption",
+        "upi_code": "RSW7XPK3LQNM4HV8JF2W",
+        "classification_note": null,
+        "validation_errors": [],
+        "warnings": []
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T008",
+          "regime": "CFTC",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "reporting_counterparty_lei: LEI '2138002TXD6KSZ3V5X27' has invalid MOD 97-10 check digits; expected 26"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared"
+          ],
+          "explanation": "Trade fails CFTC on reporting_counterparty_lei; remediate before resubmission."
+        },
+        "EMIR": {
+          "trade_id": "T008",
+          "regime": "EMIR",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "reporting_counterparty_lei: LEI '2138002TXD6KSZ3V5X27' has invalid MOD 97-10 check digits; expected 26"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails EMIR on reporting_counterparty_lei; remediate before resubmission."
+        },
+        "MAS": {
+          "trade_id": "T008",
+          "regime": "MAS",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "reporting_counterparty_lei: LEI '2138002TXD6KSZ3V5X27' has invalid MOD 97-10 check digits; expected 26"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails MAS on reporting_counterparty_lei; remediate before resubmission."
+        }
+      }
+    },
+    {
+      "trade_id": "T009",
+      "asset_class": "FX",
+      "instrument_type": "Option",
+      "use_case": "Vanilla",
+      "finding_type": "IDENTIFIER_ERROR",
+      "module1_parse": {
+        "trade_id": "T009",
+        "parse_status": "SUCCESS",
+        "asset_class": "FX",
+        "instrument_type": "Option",
+        "use_case": "Vanilla",
+        "classification_flag": "CONVENTIONAL_DERIVATIVE",
+        "parse_errors": [],
+        "classified_fields": {
+          "notional_currency": "INVALID_CCY",
+          "notional_amount": 25000000,
+          "cleared": false,
+          "uti": "1VUV7VQFKUOQSJ21A20820251010FXO0001",
+          "execution_timestamp": "2025-10-10T12:00:00Z",
+          "effective_date": "2025-10-14",
+          "maturity_date": "2026-01-14",
+          "action_type": "NEW",
+          "platform": "VOICE",
+          "reporting_counterparty_lei": "1VUV7VQFKUOQSJ21A208",
+          "other_counterparty_lei": "9695009AXSRNHZE85Y20"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T009",
+        "status": "INVALID_ATTRIBUTES",
+        "matched_template": "FX.Option.Vanilla",
+        "upi_code": null,
+        "classification_note": null,
+        "validation_errors": [
+          "notional_currency: currency code 'INVALID_CCY' must be a three-letter uppercase ISO 4217 code"
+        ],
+        "warnings": []
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T009",
+          "regime": "CFTC",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "notional_currency: currency code 'INVALID_CCY' must be a three-letter uppercase ISO 4217 code",
+            "other_counterparty_lei: LEI '9695009AXSRNHZE85Y20' has invalid MOD 97-10 check digits; expected 38",
+            "upi: UPI lookup failed with status INVALID_ATTRIBUTES",
+            "upi: mandatory UPI unavailable; lookup status=INVALID_ATTRIBUTES",
+            "upi_attribute: notional_currency: currency code 'INVALID_CCY' must be a three-letter uppercase ISO 4217 code"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared"
+          ],
+          "explanation": "Trade fails CFTC on 5 fields (first: notional_currency); remediate all flagged fields before resubmission."
+        },
+        "EMIR": {
+          "trade_id": "T009",
+          "regime": "EMIR",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "collateral_portfolio_code: mandatory collateral field is missing or null",
+            "initial_margin_posted: mandatory collateral field is missing or null",
+            "notional_currency: currency code 'INVALID_CCY' must be a three-letter uppercase ISO 4217 code",
+            "other_counterparty_lei: LEI '9695009AXSRNHZE85Y20' has invalid MOD 97-10 check digits; expected 38",
+            "upi: UPI lookup failed with status INVALID_ATTRIBUTES",
+            "upi: mandatory UPI unavailable; lookup status=INVALID_ATTRIBUTES",
+            "upi_attribute: notional_currency: currency code 'INVALID_CCY' must be a three-letter uppercase ISO 4217 code",
+            "variation_margin_posted: mandatory collateral field is missing or null"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails EMIR on 8 fields (first: collateral_portfolio_code); remediate all flagged fields before resubmission."
+        },
+        "MAS": {
+          "trade_id": "T009",
+          "regime": "MAS",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "collateral_portfolio_code: mandatory collateral field is missing or null",
+            "initial_margin_posted: mandatory collateral field is missing or null",
+            "notional_currency: currency code 'INVALID_CCY' must be a three-letter uppercase ISO 4217 code",
+            "other_counterparty_lei: LEI '9695009AXSRNHZE85Y20' has invalid MOD 97-10 check digits; expected 38",
+            "upi: UPI lookup failed with status INVALID_ATTRIBUTES",
+            "upi: mandatory UPI unavailable; lookup status=INVALID_ATTRIBUTES",
+            "upi_attribute: notional_currency: currency code 'INVALID_CCY' must be a three-letter uppercase ISO 4217 code",
+            "variation_margin_posted: mandatory collateral field is missing or null"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails MAS on 8 fields (first: collateral_portfolio_code); remediate all flagged fields before resubmission."
+        }
+      }
+    },
+    {
+      "trade_id": "T010",
+      "asset_class": "Credit",
+      "instrument_type": "Swap",
+      "use_case": "Index",
+      "finding_type": "IDENTIFIER_ERROR",
+      "module1_parse": {
+        "trade_id": "T010",
+        "parse_status": "SUCCESS",
+        "asset_class": "Credit",
+        "instrument_type": "Swap",
+        "use_case": "Index",
+        "classification_flag": "CONVENTIONAL_DERIVATIVE",
+        "parse_errors": [],
+        "classified_fields": {
+          "notional_currency": "USD",
+          "notional_amount": 30000000,
+          "cleared": true,
+          "uti": "5299000J2N45DDNE4Y2820250115CDX0001",
+          "execution_timestamp": "2025-01-15T16:00:00Z",
+          "effective_date": "2025-01-20",
+          "maturity_date": "2030-12-20",
+          "action_type": "NEW",
+          "platform": "SEF",
+          "reporting_counterparty_lei": "5299000J2N45DDNE4Y28",
+          "other_counterparty_lei": "2138002TXD6KSZ3V5X27"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T010",
+        "status": "FOUND",
+        "matched_template": "Credit.Swap.Index",
+        "upi_code": "CIN5VPK3LQNM4WHF2YJ8",
+        "classification_note": null,
+        "validation_errors": [],
+        "warnings": []
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T010",
+          "regime": "CFTC",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "other_counterparty_lei: LEI '2138002TXD6KSZ3V5X27' has invalid MOD 97-10 check digits; expected 26"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared"
+          ],
+          "explanation": "Trade fails CFTC on other_counterparty_lei; remediate before resubmission."
+        },
+        "EMIR": {
+          "trade_id": "T010",
+          "regime": "EMIR",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "other_counterparty_lei: LEI '2138002TXD6KSZ3V5X27' has invalid MOD 97-10 check digits; expected 26"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails EMIR on other_counterparty_lei; remediate before resubmission."
+        },
+        "MAS": {
+          "trade_id": "T010",
+          "regime": "MAS",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "other_counterparty_lei: LEI '2138002TXD6KSZ3V5X27' has invalid MOD 97-10 check digits; expected 26"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails MAS on other_counterparty_lei; remediate before resubmission."
+        }
+      }
+    },
+    {
+      "trade_id": "T011",
+      "asset_class": "Rates",
+      "instrument_type": "Swap",
+      "use_case": "CrossCurrency",
+      "finding_type": "IDENTIFIER_ERROR",
+      "module1_parse": {
+        "trade_id": "T011",
+        "parse_status": "SUCCESS",
+        "asset_class": "Rates",
+        "instrument_type": "Swap",
+        "use_case": "CrossCurrency",
+        "classification_flag": "CONVENTIONAL_DERIVATIVE",
+        "parse_errors": [],
+        "classified_fields": {
+          "notional_currency_leg1": "USD",
+          "notional_amount_leg1": 100000000,
+          "notional_currency_leg2": "JPY",
+          "notional_amount_leg2": 15500000000,
+          "cleared": false,
+          "uti": "VGRQXHF3J8VDLUA7XE9220250601XCS0001",
+          "execution_timestamp": "2025-06-01T09:30:00Z",
+          "effective_date": "2025-06-05",
+          "maturity_date": "2028-06-05",
+          "action_type": "NEW",
+          "platform": "VOICE",
+          "reporting_counterparty_lei": "VGRQXHF3J8VDLUA7XE92",
+          "other_counterparty_lei": "4R3ZURLYISNNNMHMK608"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T011",
+        "status": "FOUND",
+        "matched_template": "Rates.Swap.CrossCurrency",
+        "upi_code": "RXC9PV2TKLM4QHN8WJF6",
+        "classification_note": null,
+        "validation_errors": [],
+        "warnings": []
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T011",
+          "regime": "CFTC",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "other_counterparty_lei: LEI '4R3ZURLYISNNNMHMK608' has invalid MOD 97-10 check digits; expected 62"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared"
+          ],
+          "explanation": "Trade fails CFTC on other_counterparty_lei; remediate before resubmission."
+        },
+        "EMIR": {
+          "trade_id": "T011",
+          "regime": "EMIR",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "other_counterparty_lei: LEI '4R3ZURLYISNNNMHMK608' has invalid MOD 97-10 check digits; expected 62"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails EMIR on other_counterparty_lei; remediate before resubmission."
+        },
+        "MAS": {
+          "trade_id": "T011",
+          "regime": "MAS",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "other_counterparty_lei: LEI '4R3ZURLYISNNNMHMK608' has invalid MOD 97-10 check digits; expected 62"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails MAS on other_counterparty_lei; remediate before resubmission."
+        }
+      }
+    },
+    {
+      "trade_id": "T012",
+      "asset_class": "Equity",
+      "instrument_type": "Swap",
+      "use_case": "TotalReturn_SingleIndex",
+      "finding_type": "IDENTIFIER_ERROR",
+      "module1_parse": {
+        "trade_id": "T012",
+        "parse_status": "SUCCESS",
+        "asset_class": "Equity",
+        "instrument_type": "Swap",
+        "use_case": "TotalReturn_SingleIndex",
+        "classification_flag": "CONVENTIONAL_DERIVATIVE",
+        "parse_errors": [],
+        "classified_fields": {
+          "notional_currency": "USD",
+          "notional_amount": 50000000,
+          "cleared": false,
+          "uti": "9695009AXSRNHZE85Y2020250715TRS0001",
+          "execution_timestamp": "2025-07-15T10:00:00Z",
+          "effective_date": "2025-07-17",
+          "maturity_date": "2026-07-17",
+          "action_type": "NEW",
+          "platform": "VOICE",
+          "reporting_counterparty_lei": "9695009AXSRNHZE85Y20",
+          "other_counterparty_lei": "5493001KJTIIGC8Y1R12"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T012",
+        "status": "FOUND",
+        "matched_template": "Equity.Swap.TotalReturn_SingleIndex",
+        "upi_code": "ETI8KMQ3PVLN4HW2YJ7F",
+        "classification_note": null,
+        "validation_errors": [],
+        "warnings": []
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T012",
+          "regime": "CFTC",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "reporting_counterparty_lei: LEI '9695009AXSRNHZE85Y20' has invalid MOD 97-10 check digits; expected 38"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared"
+          ],
+          "explanation": "Trade fails CFTC on reporting_counterparty_lei; remediate before resubmission."
+        },
+        "EMIR": {
+          "trade_id": "T012",
+          "regime": "EMIR",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "reporting_counterparty_lei: LEI '9695009AXSRNHZE85Y20' has invalid MOD 97-10 check digits; expected 38"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails EMIR on reporting_counterparty_lei; remediate before resubmission."
+        },
+        "MAS": {
+          "trade_id": "T012",
+          "regime": "MAS",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "reporting_counterparty_lei: LEI '9695009AXSRNHZE85Y20' has invalid MOD 97-10 check digits; expected 38"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails MAS on reporting_counterparty_lei; remediate before resubmission."
+        }
+      }
+    },
+    {
+      "trade_id": "T013",
+      "asset_class": "Rates",
+      "instrument_type": "Swap",
+      "use_case": "Inflation",
+      "finding_type": "IDENTIFIER_ERROR",
+      "module1_parse": {
+        "trade_id": "T013",
+        "parse_status": "PARTIAL",
+        "asset_class": "Rates",
+        "instrument_type": "Swap",
+        "use_case": "Inflation",
+        "classification_flag": "CONVENTIONAL_DERIVATIVE",
+        "parse_errors": [
+          "execution_timestamp must use ISO 8601 UTC format YYYY-MM-DDTHH:MM:SSZ"
+        ],
+        "classified_fields": {
+          "notional_currency": "GBP",
+          "notional_amount": 25000000,
+          "cleared": false,
+          "uti": "1VUV7VQFKUOQSJ21A20820250901INF0001",
+          "execution_timestamp": "2025-09-01",
+          "effective_date": "2025-09-03",
+          "maturity_date": "2035-09-03",
+          "action_type": "NEW",
+          "platform": "VOICE",
+          "reporting_counterparty_lei": "1VUV7VQFKUOQSJ21A208",
+          "other_counterparty_lei": "5299000J2N45DDNE4Y28"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T013",
+        "status": "FOUND",
+        "matched_template": "Rates.Swap.Inflation",
+        "upi_code": "RIN7FPQK3VWLM2YHN5JZ",
+        "classification_note": null,
+        "validation_errors": [],
+        "warnings": []
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T013",
+          "regime": "CFTC",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "execution_timestamp: execution_timestamp must use ISO 8601 UTC format YYYY-MM-DDTHH:MM:SSZ",
+            "parse: execution_timestamp must use ISO 8601 UTC format YYYY-MM-DDTHH:MM:SSZ"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared"
+          ],
+          "explanation": "Trade fails CFTC on 2 fields (first: execution_timestamp); remediate all flagged fields before resubmission."
+        },
+        "EMIR": {
+          "trade_id": "T013",
+          "regime": "EMIR",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "execution_timestamp: execution_timestamp must use ISO 8601 UTC format YYYY-MM-DDTHH:MM:SSZ",
+            "parse: execution_timestamp must use ISO 8601 UTC format YYYY-MM-DDTHH:MM:SSZ"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails EMIR on 2 fields (first: execution_timestamp); remediate all flagged fields before resubmission."
+        },
+        "MAS": {
+          "trade_id": "T013",
+          "regime": "MAS",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "execution_timestamp: execution_timestamp must use ISO 8601 UTC format YYYY-MM-DDTHH:MM:SSZ",
+            "parse: execution_timestamp must use ISO 8601 UTC format YYYY-MM-DDTHH:MM:SSZ"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails MAS on 2 fields (first: execution_timestamp); remediate all flagged fields before resubmission."
+        }
+      }
+    },
+    {
+      "trade_id": "T014",
+      "asset_class": "FX",
+      "instrument_type": "Swap",
+      "use_case": "Standard",
+      "finding_type": "IDENTIFIER_ERROR",
+      "module1_parse": {
+        "trade_id": "T014",
+        "parse_status": "SUCCESS",
+        "asset_class": "FX",
+        "instrument_type": "Swap",
+        "use_case": "Standard",
+        "classification_flag": "CONVENTIONAL_DERIVATIVE",
+        "parse_errors": [],
+        "classified_fields": {
+          "notional_currency": "AUD",
+          "notional_amount": 40000000,
+          "cleared": false,
+          "uti": "4R3ZURLYISNNNMHMK60820251120FXS0001",
+          "execution_timestamp": "2025-11-20T14:00:00Z",
+          "effective_date": "2025-11-22",
+          "maturity_date": "2026-02-22",
+          "action_type": "NEW",
+          "platform": "VOICE",
+          "reporting_counterparty_lei": "4R3ZURLYISNNNMHMK608",
+          "other_counterparty_lei": "2138002TXD6KSZ3V5X27"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T014",
+        "status": "FOUND",
+        "matched_template": "FX.Swap.Standard",
+        "upi_code": "FSS3KQM7PVLN4HW2YJ8F",
+        "classification_note": null,
+        "validation_errors": [],
+        "warnings": []
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T014",
+          "regime": "CFTC",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "other_counterparty_lei: LEI '2138002TXD6KSZ3V5X27' has invalid MOD 97-10 check digits; expected 26",
+            "reporting_counterparty_lei: LEI '4R3ZURLYISNNNMHMK608' has invalid MOD 97-10 check digits; expected 62"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared"
+          ],
+          "explanation": "Trade fails CFTC on 2 fields (first: other_counterparty_lei); remediate all flagged fields before resubmission."
+        },
+        "EMIR": {
+          "trade_id": "T014",
+          "regime": "EMIR",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "collateral_portfolio_code: mandatory collateral field is missing or null",
+            "initial_margin_posted: mandatory collateral field is missing or null",
+            "other_counterparty_lei: LEI '2138002TXD6KSZ3V5X27' has invalid MOD 97-10 check digits; expected 26",
+            "reporting_counterparty_lei: LEI '4R3ZURLYISNNNMHMK608' has invalid MOD 97-10 check digits; expected 62",
+            "variation_margin_posted: mandatory collateral field is missing or null"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails EMIR on 5 fields (first: collateral_portfolio_code); remediate all flagged fields before resubmission."
+        },
+        "MAS": {
+          "trade_id": "T014",
+          "regime": "MAS",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "collateral_portfolio_code: mandatory collateral field is missing or null",
+            "initial_margin_posted: mandatory collateral field is missing or null",
+            "other_counterparty_lei: LEI '2138002TXD6KSZ3V5X27' has invalid MOD 97-10 check digits; expected 26",
+            "reporting_counterparty_lei: LEI '4R3ZURLYISNNNMHMK608' has invalid MOD 97-10 check digits; expected 62",
+            "variation_margin_posted: mandatory collateral field is missing or null"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails MAS on 5 fields (first: collateral_portfolio_code); remediate all flagged fields before resubmission."
+        }
+      }
+    },
+    {
+      "trade_id": "T015",
+      "asset_class": "Rates",
+      "instrument_type": "Cap_Floor",
+      "use_case": "Cap",
+      "finding_type": "IDENTIFIER_ERROR",
+      "module1_parse": {
+        "trade_id": "T015",
+        "parse_status": "SUCCESS",
+        "asset_class": "Rates",
+        "instrument_type": "Cap_Floor",
+        "use_case": "Cap",
+        "classification_flag": "CONVENTIONAL_DERIVATIVE",
+        "parse_errors": [],
+        "classified_fields": {
+          "notional_currency": "USD",
+          "notional_amount": 150000000,
+          "cleared": false,
+          "uti": "2138002TXD6KSZ3V5X2720250801CAP0001",
+          "execution_timestamp": "2025-08-01T11:30:00Z",
+          "effective_date": "2025-08-05",
+          "maturity_date": "2028-08-05",
+          "action_type": "NEW",
+          "platform": "VOICE",
+          "reporting_counterparty_lei": "2138002TXD6KSZ3V5X27",
+          "other_counterparty_lei": "1VUV7VQFKUOQSJ21A208"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T015",
+        "status": "FOUND",
+        "matched_template": "Rates.Cap_Floor.Cap",
+        "upi_code": "RCP4LM7KQVN8YH2WPF5J",
+        "classification_note": null,
+        "validation_errors": [],
+        "warnings": []
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T015",
+          "regime": "CFTC",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "reporting_counterparty_lei: LEI '2138002TXD6KSZ3V5X27' has invalid MOD 97-10 check digits; expected 26"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared"
+          ],
+          "explanation": "Trade fails CFTC on reporting_counterparty_lei; remediate before resubmission."
+        },
+        "EMIR": {
+          "trade_id": "T015",
+          "regime": "EMIR",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "reporting_counterparty_lei: LEI '2138002TXD6KSZ3V5X27' has invalid MOD 97-10 check digits; expected 26"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails EMIR on reporting_counterparty_lei; remediate before resubmission."
+        },
+        "MAS": {
+          "trade_id": "T015",
+          "regime": "MAS",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "reporting_counterparty_lei: LEI '2138002TXD6KSZ3V5X27' has invalid MOD 97-10 check digits; expected 26"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails MAS on reporting_counterparty_lei; remediate before resubmission."
+        }
+      }
+    },
+    {
+      "trade_id": "T016",
+      "asset_class": "Equity",
+      "instrument_type": "Swap",
+      "use_case": "Variance",
+      "finding_type": "IDENTIFIER_ERROR",
+      "module1_parse": {
+        "trade_id": "T016",
+        "parse_status": "SUCCESS",
+        "asset_class": "Equity",
+        "instrument_type": "Swap",
+        "use_case": "Variance",
+        "classification_flag": "CONVENTIONAL_DERIVATIVE",
+        "parse_errors": [],
+        "classified_fields": {
+          "notional_currency": "EUR",
+          "notional_amount": 15000000,
+          "cleared": false,
+          "uti": "9695009AXSRNHZE85Y202025091VARSWP01",
+          "execution_timestamp": "2025-09-15T13:00:00Z",
+          "effective_date": "2025-09-17",
+          "maturity_date": "2026-03-17",
+          "action_type": "NEW",
+          "platform": "VOICE",
+          "reporting_counterparty_lei": "9695009AXSRNHZE85Y20",
+          "other_counterparty_lei": "VGRQXHF3J8VDLUA7XE92"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T016",
+        "status": "FOUND",
+        "matched_template": "Equity.Swap.Variance",
+        "upi_code": "EVR7KMQ3PVLN4HW2YJ8F",
+        "classification_note": null,
+        "validation_errors": [],
+        "warnings": []
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T016",
+          "regime": "CFTC",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "reporting_counterparty_lei: LEI '9695009AXSRNHZE85Y20' has invalid MOD 97-10 check digits; expected 38"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared"
+          ],
+          "explanation": "Trade fails CFTC on reporting_counterparty_lei; remediate before resubmission."
+        },
+        "EMIR": {
+          "trade_id": "T016",
+          "regime": "EMIR",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "collateral_portfolio_code: mandatory collateral field is missing or null",
+            "initial_margin_posted: mandatory collateral field is missing or null",
+            "reporting_counterparty_lei: LEI '9695009AXSRNHZE85Y20' has invalid MOD 97-10 check digits; expected 38",
+            "variation_margin_posted: mandatory collateral field is missing or null"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails EMIR on 4 fields (first: collateral_portfolio_code); remediate all flagged fields before resubmission."
+        },
+        "MAS": {
+          "trade_id": "T016",
+          "regime": "MAS",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "collateral_portfolio_code: mandatory collateral field is missing or null",
+            "initial_margin_posted: mandatory collateral field is missing or null",
+            "reporting_counterparty_lei: LEI '9695009AXSRNHZE85Y20' has invalid MOD 97-10 check digits; expected 38",
+            "variation_margin_posted: mandatory collateral field is missing or null"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails MAS on 4 fields (first: collateral_portfolio_code); remediate all flagged fields before resubmission."
+        }
+      }
+    },
+    {
+      "trade_id": "T017",
+      "asset_class": "Credit",
+      "instrument_type": "Swap",
+      "use_case": "Sovereign",
+      "finding_type": "FIELD_VALIDATION_ERROR",
+      "module1_parse": {
+        "trade_id": "T017",
+        "parse_status": "SUCCESS",
+        "asset_class": "Credit",
+        "instrument_type": "Swap",
+        "use_case": "Sovereign",
+        "classification_flag": "CONVENTIONAL_DERIVATIVE",
+        "parse_errors": [],
+        "classified_fields": {
+          "notional_currency": "USD",
+          "notional_amount": 20000000,
+          "cleared": false,
+          "uti": "5493001KJTIIGC8Y1R1220251105SOV0001",
+          "execution_timestamp": "2025-11-05T09:15:00Z",
+          "effective_date": "2025-11-07",
+          "maturity_date": "2030-11-07",
+          "action_type": "NEW",
+          "platform": "VOICE",
+          "reporting_counterparty_lei": "5493001KJTIIGC8Y1R12",
+          "other_counterparty_lei": "5299000J2N45DDNE4Y28"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T017",
+        "status": "FOUND",
+        "matched_template": "Credit.Swap.Sovereign",
+        "upi_code": "CSO9MQK7VPLN4WHF2YJ4",
+        "classification_note": null,
+        "validation_errors": [],
+        "warnings": []
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T017",
+          "regime": "CFTC",
+          "status": "COMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared"
+          ],
+          "explanation": "All mandatory CFTC reporting fields validated; trade is ready for SDR submission."
+        },
+        "EMIR": {
+          "trade_id": "T017",
+          "regime": "EMIR",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "collateral_portfolio_code: mandatory collateral field is missing or null",
+            "initial_margin_posted: mandatory collateral field is missing or null",
+            "variation_margin_posted: mandatory collateral field is missing or null"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails EMIR on 3 fields (first: collateral_portfolio_code); remediate all flagged fields before resubmission."
+        },
+        "MAS": {
+          "trade_id": "T017",
+          "regime": "MAS",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "collateral_portfolio_code: mandatory collateral field is missing or null",
+            "initial_margin_posted: mandatory collateral field is missing or null",
+            "variation_margin_posted: mandatory collateral field is missing or null"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails MAS on 3 fields (first: collateral_portfolio_code); remediate all flagged fields before resubmission."
+        }
+      }
+    },
+    {
+      "trade_id": "T018",
+      "asset_class": "Rates",
+      "instrument_type": "Swap",
+      "use_case": "OIS",
+      "finding_type": "IDENTIFIER_ERROR",
+      "module1_parse": {
+        "trade_id": "T018",
+        "parse_status": "SUCCESS",
+        "asset_class": "Rates",
+        "instrument_type": "Swap",
+        "use_case": "OIS",
+        "classification_flag": "CONVENTIONAL_DERIVATIVE",
+        "parse_errors": [],
+        "classified_fields": {
+          "notional_currency": "EUR",
+          "notional_amount": 500000000,
+          "cleared": true,
+          "uti": "VGRQXHF3J8VDLUA7XE9220251201OIS0001",
+          "execution_timestamp": "2025-12-01T08:45:00Z",
+          "effective_date": "2025-12-03",
+          "maturity_date": "2026-06-03",
+          "action_type": "NEW",
+          "platform": "SEF",
+          "reporting_counterparty_lei": "VGRQXHF3J8VDLUA7XE92",
+          "other_counterparty_lei": "9695009AXSRNHZE85Y20"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T018",
+        "status": "FOUND",
+        "matched_template": "Rates.Swap.OIS",
+        "upi_code": "ROIS5QY8K3PWLT2NFM7H",
+        "classification_note": null,
+        "validation_errors": [],
+        "warnings": []
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T018",
+          "regime": "CFTC",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "other_counterparty_lei: LEI '9695009AXSRNHZE85Y20' has invalid MOD 97-10 check digits; expected 38"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared"
+          ],
+          "explanation": "Trade fails CFTC on other_counterparty_lei; remediate before resubmission."
+        },
+        "EMIR": {
+          "trade_id": "T018",
+          "regime": "EMIR",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "other_counterparty_lei: LEI '9695009AXSRNHZE85Y20' has invalid MOD 97-10 check digits; expected 38"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails EMIR on other_counterparty_lei; remediate before resubmission."
+        },
+        "MAS": {
+          "trade_id": "T018",
+          "regime": "MAS",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "other_counterparty_lei: LEI '9695009AXSRNHZE85Y20' has invalid MOD 97-10 check digits; expected 38"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails MAS on other_counterparty_lei; remediate before resubmission."
+        }
+      }
+    },
+    {
+      "trade_id": "T019",
+      "asset_class": "Commodities",
+      "instrument_type": "Option",
+      "use_case": "SingleName",
+      "finding_type": "IDENTIFIER_ERROR",
+      "module1_parse": {
+        "trade_id": "T019",
+        "parse_status": "SUCCESS",
+        "asset_class": "Commodities",
+        "instrument_type": "Option",
+        "use_case": "SingleName",
+        "classification_flag": "CONVENTIONAL_DERIVATIVE",
+        "parse_errors": [],
+        "classified_fields": {
+          "notional_currency": "USD",
+          "notional_amount": 10000000,
+          "cleared": false,
+          "uti": "4R3ZURLYISNNNMHMK60820260115OPT0001",
+          "execution_timestamp": "2026-01-15T10:00:00Z",
+          "effective_date": "2026-01-17",
+          "maturity_date": "2026-07-17",
+          "action_type": "NEW",
+          "platform": "VOICE",
+          "reporting_counterparty_lei": "4R3ZURLYISNNNMHMK608",
+          "other_counterparty_lei": "1VUV7VQFKUOQSJ21A208"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T019",
+        "status": "FOUND",
+        "matched_template": "Commodities.Option.SingleName",
+        "upi_code": "MOP4KMQ3PVLN4HW2YJ8F",
+        "classification_note": null,
+        "validation_errors": [],
+        "warnings": []
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T019",
+          "regime": "CFTC",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "reporting_counterparty_lei: LEI '4R3ZURLYISNNNMHMK608' has invalid MOD 97-10 check digits; expected 62"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared"
+          ],
+          "explanation": "Trade fails CFTC on reporting_counterparty_lei; remediate before resubmission."
+        },
+        "EMIR": {
+          "trade_id": "T019",
+          "regime": "EMIR",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "collateral_portfolio_code: mandatory collateral field is missing or null",
+            "initial_margin_posted: mandatory collateral field is missing or null",
+            "reporting_counterparty_lei: LEI '4R3ZURLYISNNNMHMK608' has invalid MOD 97-10 check digits; expected 62",
+            "variation_margin_posted: mandatory collateral field is missing or null"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails EMIR on 4 fields (first: collateral_portfolio_code); remediate all flagged fields before resubmission."
+        },
+        "MAS": {
+          "trade_id": "T019",
+          "regime": "MAS",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "collateral_portfolio_code: mandatory collateral field is missing or null",
+            "initial_margin_posted: mandatory collateral field is missing or null",
+            "reporting_counterparty_lei: LEI '4R3ZURLYISNNNMHMK608' has invalid MOD 97-10 check digits; expected 62",
+            "variation_margin_posted: mandatory collateral field is missing or null"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails MAS on 4 fields (first: collateral_portfolio_code); remediate all flagged fields before resubmission."
+        }
+      }
+    },
+    {
+      "trade_id": "T020",
+      "asset_class": "FX",
+      "instrument_type": "Option",
+      "use_case": "Barrier",
+      "finding_type": "IDENTIFIER_ERROR",
+      "module1_parse": {
+        "trade_id": "T020",
+        "parse_status": "SUCCESS",
+        "asset_class": "FX",
+        "instrument_type": "Option",
+        "use_case": "Barrier",
+        "classification_flag": "CONVENTIONAL_DERIVATIVE",
+        "parse_errors": [],
+        "classified_fields": {
+          "notional_currency": "USD",
+          "notional_amount": 30000000,
+          "cleared": false,
+          "uti": "2138002TXD6KSZ3V5X2720260210BRR0001",
+          "execution_timestamp": "2026-02-10T15:00:00Z",
+          "effective_date": "2026-02-12",
+          "maturity_date": "2026-08-12",
+          "action_type": "NEW",
+          "platform": "VOICE",
+          "reporting_counterparty_lei": "2138002TXD6KSZ3V5X27",
+          "other_counterparty_lei": "4R3ZURLYISNNNMHMK608"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T020",
+        "status": "FOUND",
+        "matched_template": "FX.Option.Barrier",
+        "upi_code": "FOB4KQM7PVLN3HW2YJ8F",
+        "classification_note": null,
+        "validation_errors": [],
+        "warnings": []
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T020",
+          "regime": "CFTC",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "other_counterparty_lei: LEI '4R3ZURLYISNNNMHMK608' has invalid MOD 97-10 check digits; expected 62",
+            "reporting_counterparty_lei: LEI '2138002TXD6KSZ3V5X27' has invalid MOD 97-10 check digits; expected 26"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared"
+          ],
+          "explanation": "Trade fails CFTC on 2 fields (first: other_counterparty_lei); remediate all flagged fields before resubmission."
+        },
+        "EMIR": {
+          "trade_id": "T020",
+          "regime": "EMIR",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "collateral_portfolio_code: mandatory collateral field is missing or null",
+            "initial_margin_posted: mandatory collateral field is missing or null",
+            "other_counterparty_lei: LEI '4R3ZURLYISNNNMHMK608' has invalid MOD 97-10 check digits; expected 62",
+            "reporting_counterparty_lei: LEI '2138002TXD6KSZ3V5X27' has invalid MOD 97-10 check digits; expected 26",
+            "variation_margin_posted: mandatory collateral field is missing or null"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails EMIR on 5 fields (first: collateral_portfolio_code); remediate all flagged fields before resubmission."
+        },
+        "MAS": {
+          "trade_id": "T020",
+          "regime": "MAS",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "collateral_portfolio_code: mandatory collateral field is missing or null",
+            "initial_margin_posted: mandatory collateral field is missing or null",
+            "other_counterparty_lei: LEI '4R3ZURLYISNNNMHMK608' has invalid MOD 97-10 check digits; expected 62",
+            "reporting_counterparty_lei: LEI '2138002TXD6KSZ3V5X27' has invalid MOD 97-10 check digits; expected 26",
+            "variation_margin_posted: mandatory collateral field is missing or null"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails MAS on 5 fields (first: collateral_portfolio_code); remediate all flagged fields before resubmission."
+        }
+      }
+    },
+    {
+      "trade_id": "T021",
+      "asset_class": "Rates",
+      "instrument_type": "Swap",
+      "use_case": "Fixed_Float",
+      "finding_type": "IDENTIFIER_ERROR",
+      "module1_parse": {
+        "trade_id": "T021",
+        "parse_status": "PARTIAL",
+        "asset_class": "Rates",
+        "instrument_type": "Swap",
+        "use_case": "Fixed_Float",
+        "classification_flag": "CONVENTIONAL_DERIVATIVE",
+        "parse_errors": [
+          "maturity_date is not a valid calendar date: time data '9999-99-99' does not match format '%Y-%m-%d'"
+        ],
+        "classified_fields": {
+          "notional_currency": "USD",
+          "notional_amount": 100000000,
+          "cleared": true,
+          "uti": "5493001KJTIIGC8Y1R12202603010001",
+          "execution_timestamp": "2026-03-01T09:00:00Z",
+          "effective_date": "2026-03-05",
+          "maturity_date": "9999-99-99",
+          "action_type": "NEW",
+          "platform": "SEF",
+          "reporting_counterparty_lei": "5493001KJTIIGC8Y1R12",
+          "other_counterparty_lei": "VGRQXHF3J8VDLUA7XE92"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T021",
+        "status": "INVALID_ATTRIBUTES",
+        "matched_template": "Rates.Swap.Fixed_Float",
+        "upi_code": null,
+        "classification_note": null,
+        "validation_errors": [
+          "missing required attribute ReferenceRateTermUnit (looked in ['reference_rate_term_unit'])",
+          "missing required attribute ReferenceRateTermValue (looked in ['reference_rate_term_value'])"
+        ],
+        "warnings": []
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T021",
+          "regime": "CFTC",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "maturity_or_expiry_date: maturity_or_expiry_date is not a valid calendar date: time data '9999-99-99' does not match format '%Y-%m-%d'",
+            "parse: maturity_date is not a valid calendar date: time data '9999-99-99' does not match format '%Y-%m-%d'",
+            "upi: UPI lookup failed with status INVALID_ATTRIBUTES",
+            "upi: mandatory UPI unavailable; lookup status=INVALID_ATTRIBUTES",
+            "upi_attribute: missing required attribute ReferenceRateTermUnit (looked in ['reference_rate_term_unit'])",
+            "upi_attribute: missing required attribute ReferenceRateTermValue (looked in ['reference_rate_term_value'])"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared"
+          ],
+          "explanation": "Trade fails CFTC on 6 fields (first: maturity_or_expiry_date); remediate all flagged fields before resubmission."
+        },
+        "EMIR": {
+          "trade_id": "T021",
+          "regime": "EMIR",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "collateral_portfolio_code: mandatory collateral field is missing or null",
+            "initial_margin_posted: mandatory collateral field is missing or null",
+            "maturity_or_expiry_date: maturity_or_expiry_date is not a valid calendar date: time data '9999-99-99' does not match format '%Y-%m-%d'",
+            "parse: maturity_date is not a valid calendar date: time data '9999-99-99' does not match format '%Y-%m-%d'",
+            "upi: UPI lookup failed with status INVALID_ATTRIBUTES",
+            "upi: mandatory UPI unavailable; lookup status=INVALID_ATTRIBUTES",
+            "upi_attribute: missing required attribute ReferenceRateTermUnit (looked in ['reference_rate_term_unit'])",
+            "upi_attribute: missing required attribute ReferenceRateTermValue (looked in ['reference_rate_term_value'])",
+            "variation_margin_posted: mandatory collateral field is missing or null"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails EMIR on 9 fields (first: collateral_portfolio_code); remediate all flagged fields before resubmission."
+        },
+        "MAS": {
+          "trade_id": "T021",
+          "regime": "MAS",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "collateral_portfolio_code: mandatory collateral field is missing or null",
+            "initial_margin_posted: mandatory collateral field is missing or null",
+            "maturity_or_expiry_date: maturity_or_expiry_date is not a valid calendar date: time data '9999-99-99' does not match format '%Y-%m-%d'",
+            "parse: maturity_date is not a valid calendar date: time data '9999-99-99' does not match format '%Y-%m-%d'",
+            "upi: UPI lookup failed with status INVALID_ATTRIBUTES",
+            "upi: mandatory UPI unavailable; lookup status=INVALID_ATTRIBUTES",
+            "upi_attribute: missing required attribute ReferenceRateTermUnit (looked in ['reference_rate_term_unit'])",
+            "upi_attribute: missing required attribute ReferenceRateTermValue (looked in ['reference_rate_term_value'])",
+            "variation_margin_posted: mandatory collateral field is missing or null"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails MAS on 9 fields (first: collateral_portfolio_code); remediate all flagged fields before resubmission."
+        }
+      }
+    },
+    {
+      "trade_id": "T022",
+      "asset_class": "Credit",
+      "instrument_type": "Swap",
+      "use_case": "ABS",
+      "finding_type": "IDENTIFIER_ERROR",
+      "module1_parse": {
+        "trade_id": "T022",
+        "parse_status": "SUCCESS",
+        "asset_class": "Credit",
+        "instrument_type": "Swap",
+        "use_case": "ABS",
+        "classification_flag": "CONVENTIONAL_DERIVATIVE",
+        "parse_errors": [],
+        "classified_fields": {
+          "notional_currency": "USD",
+          "notional_amount": 15000000,
+          "cleared": false,
+          "uti": "9695009AXSRNHZE85Y2020260415ABS0001",
+          "execution_timestamp": "2026-04-15T11:00:00Z",
+          "effective_date": "2026-04-17",
+          "maturity_date": "2031-04-17",
+          "action_type": "NEW",
+          "platform": "VOICE",
+          "reporting_counterparty_lei": "9695009AXSRNHZE85Y20",
+          "other_counterparty_lei": "5493001KJTIIGC8Y1R12"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T022",
+        "status": "FOUND",
+        "matched_template": "Credit.Swap.ABS",
+        "upi_code": "CAB7MQK4VPLN5WHF2YJ8",
+        "classification_note": null,
+        "validation_errors": [],
+        "warnings": []
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T022",
+          "regime": "CFTC",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "reporting_counterparty_lei: LEI '9695009AXSRNHZE85Y20' has invalid MOD 97-10 check digits; expected 38"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared"
+          ],
+          "explanation": "Trade fails CFTC on reporting_counterparty_lei; remediate before resubmission."
+        },
+        "EMIR": {
+          "trade_id": "T022",
+          "regime": "EMIR",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "reporting_counterparty_lei: LEI '9695009AXSRNHZE85Y20' has invalid MOD 97-10 check digits; expected 38"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails EMIR on reporting_counterparty_lei; remediate before resubmission."
+        },
+        "MAS": {
+          "trade_id": "T022",
+          "regime": "MAS",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "reporting_counterparty_lei: LEI '9695009AXSRNHZE85Y20' has invalid MOD 97-10 check digits; expected 38"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails MAS on reporting_counterparty_lei; remediate before resubmission."
+        }
+      }
+    },
+    {
+      "trade_id": "T023",
+      "asset_class": "Equity",
+      "instrument_type": "Forward",
+      "use_case": "SingleName",
+      "finding_type": "IDENTIFIER_ERROR",
+      "module1_parse": {
+        "trade_id": "T023",
+        "parse_status": "SUCCESS",
+        "asset_class": "Equity",
+        "instrument_type": "Forward",
+        "use_case": "SingleName",
+        "classification_flag": "CONVENTIONAL_DERIVATIVE",
+        "parse_errors": [],
+        "classified_fields": {
+          "notional_currency": "SGD",
+          "notional_amount": 8000000,
+          "cleared": false,
+          "uti": "1VUV7VQFKUOQSJ21A20820260501EQF0001",
+          "execution_timestamp": "2026-05-01T10:30:00Z",
+          "effective_date": "2026-05-05",
+          "maturity_date": "2026-11-05",
+          "action_type": "NEW",
+          "platform": "VOICE",
+          "reporting_counterparty_lei": "1VUV7VQFKUOQSJ21A208",
+          "other_counterparty_lei": "2138002TXD6KSZ3V5X27"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T023",
+        "status": "FOUND",
+        "matched_template": "Equity.Forward.SingleName",
+        "upi_code": "EFW6KMQ3PVLN4HW2YJ8F",
+        "classification_note": null,
+        "validation_errors": [],
+        "warnings": []
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T023",
+          "regime": "CFTC",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "other_counterparty_lei: LEI '2138002TXD6KSZ3V5X27' has invalid MOD 97-10 check digits; expected 26"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared"
+          ],
+          "explanation": "Trade fails CFTC on other_counterparty_lei; remediate before resubmission."
+        },
+        "EMIR": {
+          "trade_id": "T023",
+          "regime": "EMIR",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "collateral_portfolio_code: mandatory collateral field is missing or null",
+            "initial_margin_posted: mandatory collateral field is missing or null",
+            "other_counterparty_lei: LEI '2138002TXD6KSZ3V5X27' has invalid MOD 97-10 check digits; expected 26",
+            "variation_margin_posted: mandatory collateral field is missing or null"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails EMIR on 4 fields (first: collateral_portfolio_code); remediate all flagged fields before resubmission."
+        },
+        "MAS": {
+          "trade_id": "T023",
+          "regime": "MAS",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "collateral_portfolio_code: mandatory collateral field is missing or null",
+            "initial_margin_posted: mandatory collateral field is missing or null",
+            "other_counterparty_lei: LEI '2138002TXD6KSZ3V5X27' has invalid MOD 97-10 check digits; expected 26",
+            "variation_margin_posted: mandatory collateral field is missing or null"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails MAS on 4 fields (first: collateral_portfolio_code); remediate all flagged fields before resubmission."
+        }
+      }
+    },
+    {
+      "trade_id": "T024",
+      "asset_class": "Rates",
+      "instrument_type": "Swap",
+      "use_case": "Fixed_Float",
+      "finding_type": "IDENTIFIER_ERROR",
+      "module1_parse": {
+        "trade_id": "T024",
+        "parse_status": "SUCCESS",
+        "asset_class": "Rates",
+        "instrument_type": "Swap",
+        "use_case": "Fixed_Float",
+        "classification_flag": "CONVENTIONAL_DERIVATIVE",
+        "parse_errors": [],
+        "classified_fields": {
+          "notional_currency": "CAD",
+          "notional_amount": 60000000,
+          "cleared": true,
+          "uti": "5299000J2N45DDNE4Y2820260601IRS9999",
+          "execution_timestamp": "2026-06-01T14:00:00Z",
+          "effective_date": "2026-06-03",
+          "maturity_date": "2036-06-03",
+          "action_type": "NEW",
+          "platform": "SEF",
+          "reporting_counterparty_lei": "5299000J2N45DDNE4Y28",
+          "other_counterparty_lei": "4R3ZURLYISNNNMHMK608"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T024",
+        "status": "FOUND",
+        "matched_template": "Rates.Swap.Fixed_Float",
+        "upi_code": "RFF7VYZQK48LJD3WXM91",
+        "classification_note": null,
+        "validation_errors": [],
+        "warnings": []
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T024",
+          "regime": "CFTC",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "other_counterparty_lei: LEI '4R3ZURLYISNNNMHMK608' has invalid MOD 97-10 check digits; expected 62"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared"
+          ],
+          "explanation": "Trade fails CFTC on other_counterparty_lei; remediate before resubmission."
+        },
+        "EMIR": {
+          "trade_id": "T024",
+          "regime": "EMIR",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "other_counterparty_lei: LEI '4R3ZURLYISNNNMHMK608' has invalid MOD 97-10 check digits; expected 62"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails EMIR on other_counterparty_lei; remediate before resubmission."
+        },
+        "MAS": {
+          "trade_id": "T024",
+          "regime": "MAS",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "other_counterparty_lei: LEI '4R3ZURLYISNNNMHMK608' has invalid MOD 97-10 check digits; expected 62"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails MAS on other_counterparty_lei; remediate before resubmission."
+        }
+      }
+    },
+    {
+      "trade_id": "T025",
+      "asset_class": "FX",
+      "instrument_type": "Forward",
+      "use_case": "Deliverable",
+      "finding_type": "IDENTIFIER_ERROR",
+      "module1_parse": {
+        "trade_id": "T025",
+        "parse_status": "SUCCESS",
+        "asset_class": "FX",
+        "instrument_type": "Forward",
+        "use_case": "Deliverable",
+        "classification_flag": "CONVENTIONAL_DERIVATIVE",
+        "parse_errors": [],
+        "classified_fields": {
+          "notional_currency": "EUR",
+          "notional_amount": 45000000,
+          "cleared": false,
+          "uti": "VGRQXHF3J8VDLUA7XE9220260701FXF0001",
+          "execution_timestamp": "2026-07-01T16:00:00Z",
+          "effective_date": "2026-07-03",
+          "maturity_date": "2026-10-03",
+          "action_type": "NEW",
+          "platform": "VOICE",
+          "reporting_counterparty_lei": "VGRQXHF3J8VDLUA7XE92",
+          "other_counterparty_lei": "9695009AXSRNHZE85Y20"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T025",
+        "status": "FOUND",
+        "matched_template": "FX.Forward.Deliverable",
+        "upi_code": "FDV6KQM3PVLN5HW2YJ8F",
+        "classification_note": null,
+        "validation_errors": [],
+        "warnings": []
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T025",
+          "regime": "CFTC",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "other_counterparty_lei: LEI '9695009AXSRNHZE85Y20' has invalid MOD 97-10 check digits; expected 38"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared"
+          ],
+          "explanation": "Trade fails CFTC on other_counterparty_lei; remediate before resubmission."
+        },
+        "EMIR": {
+          "trade_id": "T025",
+          "regime": "EMIR",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "collateral_portfolio_code: mandatory collateral field is missing or null",
+            "initial_margin_posted: mandatory collateral field is missing or null",
+            "other_counterparty_lei: LEI '9695009AXSRNHZE85Y20' has invalid MOD 97-10 check digits; expected 38",
+            "variation_margin_posted: mandatory collateral field is missing or null"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails EMIR on 4 fields (first: collateral_portfolio_code); remediate all flagged fields before resubmission."
+        },
+        "MAS": {
+          "trade_id": "T025",
+          "regime": "MAS",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "collateral_portfolio_code: mandatory collateral field is missing or null",
+            "initial_margin_posted: mandatory collateral field is missing or null",
+            "other_counterparty_lei: LEI '9695009AXSRNHZE85Y20' has invalid MOD 97-10 check digits; expected 38",
+            "variation_margin_posted: mandatory collateral field is missing or null"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails MAS on 4 fields (first: collateral_portfolio_code); remediate all flagged fields before resubmission."
+        }
+      }
+    },
+    {
+      "trade_id": "T026",
+      "asset_class": "EventContract",
+      "instrument_type": "BinaryEventContract",
+      "use_case": "PoliticalOutcome",
+      "finding_type": "TAXONOMY_GAP_WITH_REGULATORY_NEXUS",
+      "module1_parse": {
+        "trade_id": "T026",
+        "parse_status": "SUCCESS",
+        "asset_class": "EventContract",
+        "instrument_type": "BinaryEventContract",
+        "use_case": "PoliticalOutcome",
+        "classification_flag": "NOVEL_INSTRUMENT_NO_TAXONOMY",
+        "parse_errors": [],
+        "classified_fields": {
+          "notional_currency": "USD",
+          "notional_amount": 50000,
+          "cleared": true,
+          "uti": "5493001KJTIIGC8Y1R1220260301EVT00001",
+          "execution_timestamp": "2026-03-01T14:00:00Z",
+          "settlement_date": "2026-04-01",
+          "action_type": "NEW",
+          "platform": "Kalshi",
+          "platform_type": "CFTC_REGULATED_DCM",
+          "reporting_counterparty_lei": "5493001KJTIIGC8Y1R12"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T026",
+        "status": "NO_PRODUCT_DEFINITION",
+        "matched_template": null,
+        "upi_code": null,
+        "classification_note": "Asset class 'EventContract' (instrument 'BinaryEventContract') has no product definition in the ANNA-DSB UPI library. This is the regulatory classification frontier the assignment is testing for. See Module 4 for the proposed schema extension.",
+        "validation_errors": [],
+        "warnings": []
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T026",
+          "regime": "CFTC",
+          "status": "CONDITIONAL",
+          "reporting_obligation": "CONDITIONAL",
+          "errors": [],
+          "warnings": [],
+          "notes": [
+            "Event contract executed on a CFTC-regulated DCM. Reporting treatment is CONDITIONAL pending the CFTC Advance Notice of Proposed Rulemaking on Prediction Markets (RIN 3038-AF65, 91 FR 12516, Federal Register Document No. 2026-05105, March 16 2026; comment period closed April 30 2026). The rulemaking package is cross-referenced with CFTC Press Release 9194-26, CFTC Press Release 9193-26, and CFTC Staff Letter No. 26-08 (Prediction Markets Advisory). Manual review required.",
+            "Asset class 'EventContract' (instrument 'BinaryEventContract') has no product definition in the ANNA-DSB UPI library. This is the regulatory classification frontier the assignment is testing for. See Module 4 for the proposed schema extension."
+          ],
+          "mandatory_fields_checked": [
+            "platform_type",
+            "asset_class",
+            "classification_flag"
+          ],
+          "explanation": "Trade is in scope of CFTC but reporting treatment is subject to active rulemaking; manual review required before SDR submission."
+        },
+        "EMIR": {
+          "trade_id": "T026",
+          "regime": "EMIR",
+          "status": "NOT_APPLICABLE",
+          "reporting_obligation": "NO",
+          "errors": [],
+          "warnings": [],
+          "notes": [
+            "Event contract not currently classified as an OTC derivative under EMIR Refit (April 2024 ITS). Where the venue is unauthorised in the EU, the contract typically falls under national gambling regulation (e.g. \u00a7 4(1) Gl\u00fcStV 2021 in Germany, ANJ enforcement in France) rather than financial reporting. Polymarket has been blocked by ANJ (France) since November 2024.",
+            "Asset class 'EventContract' (instrument 'BinaryEventContract') has no product definition in the ANNA-DSB UPI library. This is the regulatory classification frontier the assignment is testing for. See Module 4 for the proposed schema extension."
+          ],
+          "mandatory_fields_checked": [
+            "asset_class",
+            "classification_flag"
+          ],
+          "explanation": "Trade falls outside the EMIR reporting perimeter; no submission required under the cited rules."
+        },
+        "MAS": {
+          "trade_id": "T026",
+          "regime": "MAS",
+          "status": "NOT_APPLICABLE",
+          "reporting_obligation": "NO",
+          "errors": [],
+          "warnings": [],
+          "notes": [
+            "Event contract not within the scope of the MAS SF(RDC)R 2013 reporting model used here. The correct Singapore OTC derivatives reporting source is MAS Guidelines SFA 06A-G01 to the SF(RDC)R 2013 (May 2024); MAS Notice SFA 04-N18 is not the OTC derivatives reporting source because it concerns cross-border arrangements with foreign offices. Public materials frame Polymarket-style activity in Singapore through the Gambling Regulatory Authority and the Gambling Control Act 2022: section 20(3) addresses gambling with unlawful or unlicensed gambling service providers. Manual legal classification is required before treating such activity as MAS-reportable derivatives data.",
+            "Asset class 'EventContract' (instrument 'BinaryEventContract') has no product definition in the ANNA-DSB UPI library. This is the regulatory classification frontier the assignment is testing for. See Module 4 for the proposed schema extension."
+          ],
+          "mandatory_fields_checked": [
+            "asset_class",
+            "classification_flag"
+          ],
+          "explanation": "Trade falls outside the MAS reporting perimeter; no submission required under the cited rules."
+        }
+      }
+    },
+    {
+      "trade_id": "T027",
+      "asset_class": "EventContract",
+      "instrument_type": "BinaryEventContract",
+      "use_case": "MacroeconomicOutcome",
+      "finding_type": "JURISDICTIONAL_SCOPE_GAP",
+      "module1_parse": {
+        "trade_id": "T027",
+        "parse_status": "SUCCESS",
+        "asset_class": "EventContract",
+        "instrument_type": "BinaryEventContract",
+        "use_case": "MacroeconomicOutcome",
+        "classification_flag": "NOVEL_INSTRUMENT_NO_TAXONOMY",
+        "parse_errors": [],
+        "classified_fields": {
+          "notional_currency": "USDC",
+          "notional_amount": 200000,
+          "cleared": false,
+          "execution_timestamp": "2026-02-15T11:30:00Z",
+          "settlement_date": "2026-10-30",
+          "action_type": "NEW",
+          "platform": "Polymarket",
+          "platform_type": "DECENTRALISED_BLOCKCHAIN_PLATFORM",
+          "reporting_counterparty_lei": "VGRQXHF3J8VDLUA7XE92"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T027",
+        "status": "NO_PRODUCT_DEFINITION",
+        "matched_template": null,
+        "upi_code": null,
+        "classification_note": "Asset class 'EventContract' (instrument 'BinaryEventContract') has no product definition in the ANNA-DSB UPI library. This is the regulatory classification frontier the assignment is testing for. See Module 4 for the proposed schema extension.",
+        "validation_errors": [],
+        "warnings": []
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T027",
+          "regime": "CFTC",
+          "status": "NOT_APPLICABLE",
+          "reporting_obligation": "NO",
+          "errors": [],
+          "warnings": [],
+          "notes": [
+            "Event contract not executed on a CFTC-regulated DCM; outside the CFTC reporting perimeter.",
+            "Asset class 'EventContract' (instrument 'BinaryEventContract') has no product definition in the ANNA-DSB UPI library. This is the regulatory classification frontier the assignment is testing for. See Module 4 for the proposed schema extension."
+          ],
+          "mandatory_fields_checked": [
+            "platform_type",
+            "venue",
+            "platform_classification"
+          ],
+          "explanation": "Trade falls outside the CFTC reporting perimeter; no submission required under the cited rules."
+        },
+        "EMIR": {
+          "trade_id": "T027",
+          "regime": "EMIR",
+          "status": "NOT_APPLICABLE",
+          "reporting_obligation": "NO",
+          "errors": [],
+          "warnings": [],
+          "notes": [
+            "Event contract not currently classified as an OTC derivative under EMIR Refit (April 2024 ITS). Where the venue is unauthorised in the EU, the contract typically falls under national gambling regulation (e.g. \u00a7 4(1) Gl\u00fcStV 2021 in Germany, ANJ enforcement in France) rather than financial reporting. Polymarket has been blocked by ANJ (France) since November 2024.",
+            "Asset class 'EventContract' (instrument 'BinaryEventContract') has no product definition in the ANNA-DSB UPI library. This is the regulatory classification frontier the assignment is testing for. See Module 4 for the proposed schema extension."
+          ],
+          "mandatory_fields_checked": [
+            "asset_class",
+            "classification_flag"
+          ],
+          "explanation": "Trade falls outside the EMIR reporting perimeter; no submission required under the cited rules."
+        },
+        "MAS": {
+          "trade_id": "T027",
+          "regime": "MAS",
+          "status": "NOT_APPLICABLE",
+          "reporting_obligation": "NO",
+          "errors": [],
+          "warnings": [],
+          "notes": [
+            "Event contract not within the scope of the MAS SF(RDC)R 2013 reporting model used here. The correct Singapore OTC derivatives reporting source is MAS Guidelines SFA 06A-G01 to the SF(RDC)R 2013 (May 2024); MAS Notice SFA 04-N18 is not the OTC derivatives reporting source because it concerns cross-border arrangements with foreign offices. Public materials frame Polymarket-style activity in Singapore through the Gambling Regulatory Authority and the Gambling Control Act 2022: section 20(3) addresses gambling with unlawful or unlicensed gambling service providers. Manual legal classification is required before treating such activity as MAS-reportable derivatives data.",
+            "Asset class 'EventContract' (instrument 'BinaryEventContract') has no product definition in the ANNA-DSB UPI library. This is the regulatory classification frontier the assignment is testing for. See Module 4 for the proposed schema extension."
+          ],
+          "mandatory_fields_checked": [
+            "asset_class",
+            "classification_flag"
+          ],
+          "explanation": "Trade falls outside the MAS reporting perimeter; no submission required under the cited rules."
+        }
+      }
+    },
+    {
+      "trade_id": "T028",
+      "asset_class": "EventContract",
+      "instrument_type": "BinaryEventContract",
+      "use_case": "RegulatoryDecisionOutcome",
+      "finding_type": "TAXONOMY_GAP_WITH_REGULATORY_NEXUS",
+      "module1_parse": {
+        "trade_id": "T028",
+        "parse_status": "SUCCESS",
+        "asset_class": "EventContract",
+        "instrument_type": "BinaryEventContract",
+        "use_case": "RegulatoryDecisionOutcome",
+        "classification_flag": "NOVEL_INSTRUMENT_NO_TAXONOMY",
+        "parse_errors": [],
+        "classified_fields": {
+          "notional_currency": "USD",
+          "notional_amount": 100000,
+          "cleared": true,
+          "uti": "9695009AXSRNHZE85Y2020260115REG0001",
+          "execution_timestamp": "2026-01-15T10:00:00Z",
+          "settlement_date": "2027-01-15",
+          "action_type": "NEW",
+          "platform": "Kalshi",
+          "platform_type": "CFTC_REGULATED_DCM",
+          "reporting_counterparty_lei": "9695009AXSRNHZE85Y20"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T028",
+        "status": "NO_PRODUCT_DEFINITION",
+        "matched_template": null,
+        "upi_code": null,
+        "classification_note": "Asset class 'EventContract' (instrument 'BinaryEventContract') has no product definition in the ANNA-DSB UPI library. This is the regulatory classification frontier the assignment is testing for. See Module 4 for the proposed schema extension.",
+        "validation_errors": [],
+        "warnings": []
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T028",
+          "regime": "CFTC",
+          "status": "CONDITIONAL",
+          "reporting_obligation": "CONDITIONAL",
+          "errors": [],
+          "warnings": [],
+          "notes": [
+            "Event contract executed on a CFTC-regulated DCM. Reporting treatment is CONDITIONAL pending the CFTC Advance Notice of Proposed Rulemaking on Prediction Markets (RIN 3038-AF65, 91 FR 12516, Federal Register Document No. 2026-05105, March 16 2026; comment period closed April 30 2026). The rulemaking package is cross-referenced with CFTC Press Release 9194-26, CFTC Press Release 9193-26, and CFTC Staff Letter No. 26-08 (Prediction Markets Advisory). Manual review required.",
+            "Asset class 'EventContract' (instrument 'BinaryEventContract') has no product definition in the ANNA-DSB UPI library. This is the regulatory classification frontier the assignment is testing for. See Module 4 for the proposed schema extension."
+          ],
+          "mandatory_fields_checked": [
+            "platform_type",
+            "asset_class",
+            "classification_flag"
+          ],
+          "explanation": "Trade is in scope of CFTC but reporting treatment is subject to active rulemaking; manual review required before SDR submission."
+        },
+        "EMIR": {
+          "trade_id": "T028",
+          "regime": "EMIR",
+          "status": "NOT_APPLICABLE",
+          "reporting_obligation": "NO",
+          "errors": [],
+          "warnings": [],
+          "notes": [
+            "Event contract not currently classified as an OTC derivative under EMIR Refit (April 2024 ITS). Where the venue is unauthorised in the EU, the contract typically falls under national gambling regulation (e.g. \u00a7 4(1) Gl\u00fcStV 2021 in Germany, ANJ enforcement in France) rather than financial reporting. Polymarket has been blocked by ANJ (France) since November 2024.",
+            "Asset class 'EventContract' (instrument 'BinaryEventContract') has no product definition in the ANNA-DSB UPI library. This is the regulatory classification frontier the assignment is testing for. See Module 4 for the proposed schema extension."
+          ],
+          "mandatory_fields_checked": [
+            "asset_class",
+            "classification_flag"
+          ],
+          "explanation": "Trade falls outside the EMIR reporting perimeter; no submission required under the cited rules."
+        },
+        "MAS": {
+          "trade_id": "T028",
+          "regime": "MAS",
+          "status": "NOT_APPLICABLE",
+          "reporting_obligation": "NO",
+          "errors": [],
+          "warnings": [],
+          "notes": [
+            "Event contract not within the scope of the MAS SF(RDC)R 2013 reporting model used here. The correct Singapore OTC derivatives reporting source is MAS Guidelines SFA 06A-G01 to the SF(RDC)R 2013 (May 2024); MAS Notice SFA 04-N18 is not the OTC derivatives reporting source because it concerns cross-border arrangements with foreign offices. Public materials frame Polymarket-style activity in Singapore through the Gambling Regulatory Authority and the Gambling Control Act 2022: section 20(3) addresses gambling with unlawful or unlicensed gambling service providers. Manual legal classification is required before treating such activity as MAS-reportable derivatives data.",
+            "Asset class 'EventContract' (instrument 'BinaryEventContract') has no product definition in the ANNA-DSB UPI library. This is the regulatory classification frontier the assignment is testing for. See Module 4 for the proposed schema extension."
+          ],
+          "mandatory_fields_checked": [
+            "asset_class",
+            "classification_flag"
+          ],
+          "explanation": "Trade falls outside the MAS reporting perimeter; no submission required under the cited rules."
+        }
+      }
+    },
+    {
+      "trade_id": "T029",
+      "asset_class": "Rates",
+      "instrument_type": "Swap",
+      "use_case": "OIS",
+      "finding_type": "NO_ERROR",
+      "module1_parse": {
+        "trade_id": "T029",
+        "parse_status": "SUCCESS",
+        "asset_class": "Rates",
+        "instrument_type": "Swap",
+        "use_case": "OIS",
+        "classification_flag": "CONVENTIONAL_DERIVATIVE",
+        "parse_errors": [],
+        "classified_fields": {
+          "notional_currency": "SGD",
+          "notional_amount": 25000000,
+          "cleared": true,
+          "uti": "5493001KJTIIGC8Y1R1220260201OIS0029",
+          "execution_timestamp": "2026-02-01T09:00:00Z",
+          "effective_date": "2026-02-03",
+          "maturity_date": "2027-02-03",
+          "action_type": "NEW",
+          "platform": "SEF",
+          "reporting_counterparty_lei": "5493001KJTIIGC8Y1R12",
+          "other_counterparty_lei": "VGRQXHF3J8VDLUA7XE92"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T029",
+        "status": "FOUND",
+        "matched_template": "Rates.Swap.OIS",
+        "upi_code": "ROIS5QY8K3PWLT2NFM7H",
+        "classification_note": null,
+        "validation_errors": [],
+        "warnings": []
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T029",
+          "regime": "CFTC",
+          "status": "COMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared"
+          ],
+          "explanation": "All mandatory CFTC reporting fields validated; trade is ready for SDR submission."
+        },
+        "EMIR": {
+          "trade_id": "T029",
+          "regime": "EMIR",
+          "status": "COMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "All mandatory EMIR reporting fields validated; trade is ready for SDR submission."
+        },
+        "MAS": {
+          "trade_id": "T029",
+          "regime": "MAS",
+          "status": "COMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "All mandatory MAS reporting fields validated; trade is ready for SDR submission."
+        }
+      }
+    },
+    {
+      "trade_id": "T030",
+      "asset_class": "FX",
+      "instrument_type": "Forward",
+      "use_case": "NDF",
+      "finding_type": "IDENTIFIER_ERROR",
+      "module1_parse": {
+        "trade_id": "T030",
+        "parse_status": "SUCCESS",
+        "asset_class": "FX",
+        "instrument_type": "Forward",
+        "use_case": "NDF",
+        "classification_flag": "CONVENTIONAL_DERIVATIVE",
+        "parse_errors": [],
+        "classified_fields": {
+          "notional_currency": "USD",
+          "notional_amount": -10000000,
+          "cleared": false,
+          "uti": "VGRQXHF3J8VDLUA7XE9220260301FWD0030",
+          "execution_timestamp": "2026-03-01T11:30:00Z",
+          "effective_date": "2026-03-03",
+          "maturity_date": "2026-09-03",
+          "action_type": "NEW",
+          "platform": "VOICE",
+          "reporting_counterparty_lei": "VGRQXHF3J8VDLUA7XE92",
+          "other_counterparty_lei": "1VUV7VQFKUOQSJ21A208"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T030",
+        "status": "INVALID_ATTRIBUTES",
+        "matched_template": "FX.Forward.NDF",
+        "upi_code": null,
+        "classification_note": null,
+        "validation_errors": [
+          "notional_amount=-10000000 below minimum 0"
+        ],
+        "warnings": []
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T030",
+          "regime": "CFTC",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "notional_amount: must be a positive number, got -10000000",
+            "upi: UPI lookup failed with status INVALID_ATTRIBUTES",
+            "upi: mandatory UPI unavailable; lookup status=INVALID_ATTRIBUTES",
+            "upi_attribute: notional_amount=-10000000 below minimum 0"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared"
+          ],
+          "explanation": "Trade fails CFTC on 4 fields (first: notional_amount); remediate all flagged fields before resubmission."
+        },
+        "EMIR": {
+          "trade_id": "T030",
+          "regime": "EMIR",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "collateral_portfolio_code: mandatory collateral field is missing or null",
+            "initial_margin_posted: mandatory collateral field is missing or null",
+            "notional_amount: must be a positive number, got -10000000",
+            "upi: UPI lookup failed with status INVALID_ATTRIBUTES",
+            "upi: mandatory UPI unavailable; lookup status=INVALID_ATTRIBUTES",
+            "upi_attribute: notional_amount=-10000000 below minimum 0",
+            "variation_margin_posted: mandatory collateral field is missing or null"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails EMIR on 7 fields (first: collateral_portfolio_code); remediate all flagged fields before resubmission."
+        },
+        "MAS": {
+          "trade_id": "T030",
+          "regime": "MAS",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "collateral_portfolio_code: mandatory collateral field is missing or null",
+            "initial_margin_posted: mandatory collateral field is missing or null",
+            "notional_amount: must be a positive number, got -10000000",
+            "upi: UPI lookup failed with status INVALID_ATTRIBUTES",
+            "upi: mandatory UPI unavailable; lookup status=INVALID_ATTRIBUTES",
+            "upi_attribute: notional_amount=-10000000 below minimum 0",
+            "variation_margin_posted: mandatory collateral field is missing or null"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails MAS on 7 fields (first: collateral_portfolio_code); remediate all flagged fields before resubmission."
+        }
+      }
+    },
+    {
+      "trade_id": "T031",
+      "asset_class": "Equity",
+      "instrument_type": "Option",
+      "use_case": "SingleName_Put",
+      "finding_type": "IDENTIFIER_ERROR",
+      "module1_parse": {
+        "trade_id": "T031",
+        "parse_status": "SUCCESS",
+        "asset_class": "Equity",
+        "instrument_type": "Option",
+        "use_case": "SingleName_Put",
+        "classification_flag": "CONVENTIONAL_DERIVATIVE",
+        "parse_errors": [],
+        "classified_fields": {
+          "notional_currency": "USD",
+          "notional_amount": 7500000,
+          "cleared": false,
+          "uti": "5493001KJTIIGC8Y1R1220260315EQ0031",
+          "execution_timestamp": "2026-03-15T13:45:00Z",
+          "effective_date": "2026-03-17",
+          "maturity_date": "2026-12-19",
+          "action_type": "NEW",
+          "platform": "VOICE",
+          "reporting_counterparty_lei": "5493001KJTIIGC8Y1R12",
+          "other_counterparty_lei": "1VUV7VQFKUOQSJ21A208"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T031",
+        "status": "INVALID_ATTRIBUTES",
+        "matched_template": "Equity.Option.SingleName_Put",
+        "upi_code": null,
+        "classification_note": null,
+        "validation_errors": [
+          "underlying_isin='APPLE_INC' does not match pattern '^[A-Z]{2}[A-Z0-9]{9}[0-9]$'"
+        ],
+        "warnings": []
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T031",
+          "regime": "CFTC",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "upi: UPI lookup failed with status INVALID_ATTRIBUTES",
+            "upi: mandatory UPI unavailable; lookup status=INVALID_ATTRIBUTES",
+            "upi_attribute: underlying_isin='APPLE_INC' does not match pattern '^[A-Z]{2}[A-Z0-9]{9}[0-9]$'"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared"
+          ],
+          "explanation": "Trade fails CFTC on 3 fields (first: upi); remediate all flagged fields before resubmission."
+        },
+        "EMIR": {
+          "trade_id": "T031",
+          "regime": "EMIR",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "collateral_portfolio_code: mandatory collateral field is missing or null",
+            "initial_margin_posted: mandatory collateral field is missing or null",
+            "upi: UPI lookup failed with status INVALID_ATTRIBUTES",
+            "upi: mandatory UPI unavailable; lookup status=INVALID_ATTRIBUTES",
+            "upi_attribute: underlying_isin='APPLE_INC' does not match pattern '^[A-Z]{2}[A-Z0-9]{9}[0-9]$'",
+            "variation_margin_posted: mandatory collateral field is missing or null"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails EMIR on 6 fields (first: collateral_portfolio_code); remediate all flagged fields before resubmission."
+        },
+        "MAS": {
+          "trade_id": "T031",
+          "regime": "MAS",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "collateral_portfolio_code: mandatory collateral field is missing or null",
+            "initial_margin_posted: mandatory collateral field is missing or null",
+            "upi: UPI lookup failed with status INVALID_ATTRIBUTES",
+            "upi: mandatory UPI unavailable; lookup status=INVALID_ATTRIBUTES",
+            "upi_attribute: underlying_isin='APPLE_INC' does not match pattern '^[A-Z]{2}[A-Z0-9]{9}[0-9]$'",
+            "variation_margin_posted: mandatory collateral field is missing or null"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails MAS on 6 fields (first: collateral_portfolio_code); remediate all flagged fields before resubmission."
+        }
+      }
+    },
+    {
+      "trade_id": "T032",
+      "asset_class": "Commodities",
+      "instrument_type": "Swap",
+      "use_case": "SingleName",
+      "finding_type": "IDENTIFIER_ERROR",
+      "module1_parse": {
+        "trade_id": "T032",
+        "parse_status": "SUCCESS",
+        "asset_class": "Commodities",
+        "instrument_type": "Swap",
+        "use_case": "SingleName",
+        "classification_flag": "CONVENTIONAL_DERIVATIVE",
+        "parse_errors": [],
+        "classified_fields": {
+          "notional_currency": "USD",
+          "notional_amount": 8000000,
+          "cleared": false,
+          "uti": "5299000J2N45DDNE4Y2820260401COM0032",
+          "execution_timestamp": "2026-04-01T14:00:00Z",
+          "effective_date": "2026-04-03",
+          "maturity_date": "2027-04-03",
+          "action_type": "NEW",
+          "platform": "VOICE",
+          "reporting_counterparty_lei": "5299000J2N45DDNE4Y28",
+          "other_counterparty_lei": "VGRQXHF3J8VDLUA7XE92"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T032",
+        "status": "INVALID_ATTRIBUTES",
+        "matched_template": "Commodities.Swap.SingleName",
+        "upi_code": null,
+        "classification_note": null,
+        "validation_errors": [
+          "underlying_commodity='OIL' is not in codeset CommodityCode"
+        ],
+        "warnings": []
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T032",
+          "regime": "CFTC",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "upi: UPI lookup failed with status INVALID_ATTRIBUTES",
+            "upi: mandatory UPI unavailable; lookup status=INVALID_ATTRIBUTES",
+            "upi_attribute: underlying_commodity='OIL' is not in codeset CommodityCode"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared"
+          ],
+          "explanation": "Trade fails CFTC on 3 fields (first: upi); remediate all flagged fields before resubmission."
+        },
+        "EMIR": {
+          "trade_id": "T032",
+          "regime": "EMIR",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "upi: UPI lookup failed with status INVALID_ATTRIBUTES",
+            "upi: mandatory UPI unavailable; lookup status=INVALID_ATTRIBUTES",
+            "upi_attribute: underlying_commodity='OIL' is not in codeset CommodityCode"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails EMIR on 3 fields (first: upi); remediate all flagged fields before resubmission."
+        },
+        "MAS": {
+          "trade_id": "T032",
+          "regime": "MAS",
+          "status": "NONCOMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [
+            "upi: UPI lookup failed with status INVALID_ATTRIBUTES",
+            "upi: mandatory UPI unavailable; lookup status=INVALID_ATTRIBUTES",
+            "upi_attribute: underlying_commodity='OIL' is not in codeset CommodityCode"
+          ],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "Trade fails MAS on 3 fields (first: upi); remediate all flagged fields before resubmission."
+        }
+      }
+    },
+    {
+      "trade_id": "T033",
+      "asset_class": "EventContract",
+      "instrument_type": "BinaryEventContract",
+      "use_case": "MonetaryPolicyOutcome",
+      "finding_type": "TAXONOMY_GAP_WITH_REGULATORY_NEXUS",
+      "module1_parse": {
+        "trade_id": "T033",
+        "parse_status": "SUCCESS",
+        "asset_class": "EventContract",
+        "instrument_type": "BinaryEventContract",
+        "use_case": "MonetaryPolicyOutcome",
+        "classification_flag": "NOVEL_INSTRUMENT_NO_TAXONOMY",
+        "parse_errors": [],
+        "classified_fields": {
+          "notional_currency": "USD",
+          "notional_amount": 30000,
+          "cleared": true,
+          "uti": "5493001KJTIIGC8Y1R1220260415EVT0033",
+          "execution_timestamp": "2026-04-15T10:30:00Z",
+          "settlement_date": "2026-04-30",
+          "action_type": "NEW",
+          "platform": "Kalshi",
+          "platform_type": "CFTC_REGULATED_DCM",
+          "reporting_counterparty_lei": "5493001KJTIIGC8Y1R12"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T033",
+        "status": "NO_PRODUCT_DEFINITION",
+        "matched_template": null,
+        "upi_code": null,
+        "classification_note": "Asset class 'EventContract' (instrument 'BinaryEventContract') has no product definition in the ANNA-DSB UPI library. This is the regulatory classification frontier the assignment is testing for. See Module 4 for the proposed schema extension.",
+        "validation_errors": [],
+        "warnings": []
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T033",
+          "regime": "CFTC",
+          "status": "CONDITIONAL",
+          "reporting_obligation": "CONDITIONAL",
+          "errors": [],
+          "warnings": [],
+          "notes": [
+            "Event contract executed on a CFTC-regulated DCM. Reporting treatment is CONDITIONAL pending the CFTC Advance Notice of Proposed Rulemaking on Prediction Markets (RIN 3038-AF65, 91 FR 12516, Federal Register Document No. 2026-05105, March 16 2026; comment period closed April 30 2026). The rulemaking package is cross-referenced with CFTC Press Release 9194-26, CFTC Press Release 9193-26, and CFTC Staff Letter No. 26-08 (Prediction Markets Advisory). Manual review required.",
+            "Asset class 'EventContract' (instrument 'BinaryEventContract') has no product definition in the ANNA-DSB UPI library. This is the regulatory classification frontier the assignment is testing for. See Module 4 for the proposed schema extension."
+          ],
+          "mandatory_fields_checked": [
+            "platform_type",
+            "asset_class",
+            "classification_flag"
+          ],
+          "explanation": "Trade is in scope of CFTC but reporting treatment is subject to active rulemaking; manual review required before SDR submission."
+        },
+        "EMIR": {
+          "trade_id": "T033",
+          "regime": "EMIR",
+          "status": "NOT_APPLICABLE",
+          "reporting_obligation": "NO",
+          "errors": [],
+          "warnings": [],
+          "notes": [
+            "Event contract not currently classified as an OTC derivative under EMIR Refit (April 2024 ITS). Where the venue is unauthorised in the EU, the contract typically falls under national gambling regulation (e.g. \u00a7 4(1) Gl\u00fcStV 2021 in Germany, ANJ enforcement in France) rather than financial reporting. Polymarket has been blocked by ANJ (France) since November 2024.",
+            "Asset class 'EventContract' (instrument 'BinaryEventContract') has no product definition in the ANNA-DSB UPI library. This is the regulatory classification frontier the assignment is testing for. See Module 4 for the proposed schema extension."
+          ],
+          "mandatory_fields_checked": [
+            "asset_class",
+            "classification_flag"
+          ],
+          "explanation": "Trade falls outside the EMIR reporting perimeter; no submission required under the cited rules."
+        },
+        "MAS": {
+          "trade_id": "T033",
+          "regime": "MAS",
+          "status": "NOT_APPLICABLE",
+          "reporting_obligation": "NO",
+          "errors": [],
+          "warnings": [],
+          "notes": [
+            "Event contract not within the scope of the MAS SF(RDC)R 2013 reporting model used here. The correct Singapore OTC derivatives reporting source is MAS Guidelines SFA 06A-G01 to the SF(RDC)R 2013 (May 2024); MAS Notice SFA 04-N18 is not the OTC derivatives reporting source because it concerns cross-border arrangements with foreign offices. Public materials frame Polymarket-style activity in Singapore through the Gambling Regulatory Authority and the Gambling Control Act 2022: section 20(3) addresses gambling with unlawful or unlicensed gambling service providers. Manual legal classification is required before treating such activity as MAS-reportable derivatives data.",
+            "Asset class 'EventContract' (instrument 'BinaryEventContract') has no product definition in the ANNA-DSB UPI library. This is the regulatory classification frontier the assignment is testing for. See Module 4 for the proposed schema extension."
+          ],
+          "mandatory_fields_checked": [
+            "asset_class",
+            "classification_flag"
+          ],
+          "explanation": "Trade falls outside the MAS reporting perimeter; no submission required under the cited rules."
+        }
+      }
+    },
+    {
+      "trade_id": "T034",
+      "asset_class": "Credit",
+      "instrument_type": "Swap",
+      "use_case": "Corporate",
+      "finding_type": "NO_ERROR",
+      "module1_parse": {
+        "trade_id": "T034",
+        "parse_status": "SUCCESS",
+        "asset_class": "Credit",
+        "instrument_type": "Swap",
+        "use_case": "Corporate",
+        "classification_flag": "CONVENTIONAL_DERIVATIVE",
+        "parse_errors": [],
+        "classified_fields": {
+          "notional_currency": "USD",
+          "notional_amount": 12000000,
+          "cleared": true,
+          "uti": "1VUV7VQFKUOQSJ21A20820260501CDS0034",
+          "execution_timestamp": "2026-05-01T09:15:00Z",
+          "effective_date": "2026-05-05",
+          "maturity_date": "2031-05-05",
+          "action_type": "NEW",
+          "platform": "SEF",
+          "reporting_counterparty_lei": "1VUV7VQFKUOQSJ21A208",
+          "other_counterparty_lei": "VGRQXHF3J8VDLUA7XE92"
+        }
+      },
+      "module2_upi": {
+        "trade_id": "T034",
+        "status": "FOUND",
+        "matched_template": "Credit.Swap.Corporate",
+        "upi_code": "CCO8MQK7VPLN4WHF2YJ3",
+        "classification_note": null,
+        "validation_errors": [],
+        "warnings": []
+      },
+      "module3_compliance": {
+        "CFTC": {
+          "trade_id": "T034",
+          "regime": "CFTC",
+          "status": "COMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared"
+          ],
+          "explanation": "All mandatory CFTC reporting fields validated; trade is ready for SDR submission."
+        },
+        "EMIR": {
+          "trade_id": "T034",
+          "regime": "EMIR",
+          "status": "COMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "All mandatory EMIR reporting fields validated; trade is ready for SDR submission."
+        },
+        "MAS": {
+          "trade_id": "T034",
+          "regime": "MAS",
+          "status": "COMPLIANT",
+          "reporting_obligation": "YES",
+          "errors": [],
+          "warnings": [],
+          "notes": [],
+          "mandatory_fields_checked": [
+            "uti",
+            "reporting_counterparty_lei",
+            "other_counterparty_lei",
+            "execution_timestamp",
+            "effective_date",
+            "maturity_or_expiry_date",
+            "notional_currency",
+            "notional_amount",
+            "action_type",
+            "cleared",
+            "collateral_portfolio_code",
+            "initial_margin_posted",
+            "variation_margin_posted"
+          ],
+          "explanation": "All mandatory MAS reporting fields validated; trade is ready for SDR submission."
+        }
+      }
+    }
+  ]
+}

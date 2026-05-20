@@ -1,0 +1,28 @@
+{
+  "codeset": "CommodityCode",
+  "description": "Reference codes for common OTC commodity underliers. Patterned on FpML commodity reference codes.",
+  "values": [
+    "WTI_CRUDE",
+    "BRENT_CRUDE",
+    "HENRY_HUB_NATGAS",
+    "TTF_NATGAS",
+    "NBP_NATGAS",
+    "NATGAS",
+    "GOLD",
+    "SILVER",
+    "PLATINUM",
+    "PALLADIUM",
+    "COPPER_LME",
+    "ALUMINIUM_LME",
+    "NICKEL_LME",
+    "ZINC_LME",
+    "EUA_CARBON",
+    "CER_CARBON",
+    "CORN_CBOT",
+    "WHEAT_CBOT",
+    "SOYBEAN_CBOT",
+    "COFFEE_ICE",
+    "COCOA_ICE",
+    "SUGAR_ICE"
+  ]
+}

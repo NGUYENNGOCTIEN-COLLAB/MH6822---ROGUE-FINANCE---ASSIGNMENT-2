@@ -1,0 +1,7 @@
+{
+  "official_trades_count": 28,
+  "source": "MH6822 Homework 2 official trades.json as provided in the assignment repository",
+  "sha256": "adae82e81b9bbcf61cecf2d1541bf238599468a58dea2c2c043df3fcc4bec299",
+  "event_contract_trade_ids": ["T026", "T027", "T028"],
+  "notes": "Used by tests to prevent silent replacement of the official portfolio with a synthetic one."
+}

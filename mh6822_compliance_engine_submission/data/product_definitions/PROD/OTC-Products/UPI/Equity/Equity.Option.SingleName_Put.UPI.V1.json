@@ -1,0 +1,48 @@
+{
+  "AssetClass": "Equity",
+  "InstrumentType": "Option",
+  "UseCase": "SingleName_Put",
+  "Level": "UPI",
+  "TemplateName": "Equity.Option.SingleName_Put",
+  "UPI": "EOP9KMQ3PVLN4HW2YJ8F",
+  "Attributes": {
+    "NotionalCurrency": {
+      "type": "string",
+      "codeset": "ISOCurrencyCode",
+      "source_fields": [
+        "notional_currency"
+      ]
+    },
+    "NotionalAmount": {
+      "type": "number",
+      "minimum": 0,
+      "source_fields": [
+        "notional_amount"
+      ]
+    },
+    "UnderlyingIsin": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}[A-Z0-9]{9}[0-9]$",
+      "source_fields": [
+        "underlying_isin"
+      ]
+    },
+    "OptionType": {
+      "type": "string",
+      "enum": [
+        "PUT"
+      ],
+      "source_fields": [
+        "option_type"
+      ]
+    },
+    "StrikePrice": {
+      "type": "number",
+      "minimum": 0,
+      "source_fields": [
+        "strike_price"
+      ]
+    }
+  },
+  "SourceNote": "Local ANNA-DSB-style fixture for MH6822 Homework 2. Replace with cloned ANNA-DSB/Product-Definitions in production."
+}

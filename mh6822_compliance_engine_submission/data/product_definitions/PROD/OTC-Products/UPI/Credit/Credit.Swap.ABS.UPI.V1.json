@@ -1,0 +1,45 @@
+{
+  "AssetClass": "Credit",
+  "InstrumentType": "Swap",
+  "UseCase": "ABS",
+  "Level": "UPI",
+  "TemplateName": "Credit.Swap.ABS",
+  "UPI": "CAB7MQK4VPLN5WHF2YJ8",
+  "Attributes": {
+    "NotionalCurrency": {
+      "type": "string",
+      "codeset": "ISOCurrencyCode",
+      "source_fields": [
+        "notional_currency"
+      ]
+    },
+    "NotionalAmount": {
+      "type": "number",
+      "minimum": 0,
+      "source_fields": [
+        "notional_amount"
+      ]
+    },
+    "FixedRate": {
+      "type": "number",
+      "source_fields": [
+        "fixed_rate"
+      ]
+    },
+    "ReferenceEntityIsin": {
+      "type": "string",
+      "pattern": "^[A-Z]{2}[A-Z0-9]{9}[0-9]$",
+      "source_fields": [
+        "reference_entity_isin"
+      ]
+    },
+    "DebtSeniority": {
+      "type": "string",
+      "codeset": "DebtSeniority",
+      "source_fields": [
+        "debt_seniority"
+      ]
+    }
+  },
+  "SourceNote": "Local ANNA-DSB-style fixture for MH6822 Homework 2. Replace with cloned ANNA-DSB/Product-Definitions in production."
+}

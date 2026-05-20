@@ -1,0 +1,50 @@
+{
+  "AssetClass": "FX",
+  "InstrumentType": "Option",
+  "UseCase": "Vanilla",
+  "Level": "UPI",
+  "TemplateName": "FX.Option.Vanilla",
+  "UPI": "FOV5KQM7PVLN4HW2YJ3F",
+  "Attributes": {
+    "NotionalCurrency": {
+      "type": "string",
+      "codeset": "ISOCurrencyCode",
+      "source_fields": [
+        "notional_currency"
+      ]
+    },
+    "UnderlyingCurrencyPair": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}/[A-Z]{3}$",
+      "source_fields": [
+        "underlying_currency_pair"
+      ]
+    },
+    "NotionalAmount": {
+      "type": "number",
+      "minimum": 0,
+      "source_fields": [
+        "notional_amount"
+      ]
+    },
+    "OptionType": {
+      "type": "string",
+      "enum": [
+        "CALL",
+        "PUT",
+        "STRADDLE"
+      ],
+      "source_fields": [
+        "option_type"
+      ]
+    },
+    "StrikePrice": {
+      "type": "number",
+      "minimum": 0,
+      "source_fields": [
+        "strike_price"
+      ]
+    }
+  },
+  "SourceNote": "Local ANNA-DSB-style fixture for MH6822 Homework 2. Replace with cloned ANNA-DSB/Product-Definitions in production."
+}

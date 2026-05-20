@@ -1,0 +1,58 @@
+{
+  "AssetClass": "Commodities",
+  "InstrumentType": "Forward",
+  "UseCase": "SingleName",
+  "Level": "UPI",
+  "TemplateName": "Commodities.Forward.SingleName",
+  "UPI": "MFW6KMQ3PVLN5HW2YJ8F",
+  "Attributes": {
+    "NotionalCurrency": {
+      "type": "string",
+      "codeset": "ISOCurrencyCode",
+      "source_fields": [
+        "notional_currency"
+      ]
+    },
+    "NotionalAmount": {
+      "type": "number",
+      "minimum": 0,
+      "source_fields": [
+        "notional_amount"
+      ]
+    },
+    "UnderlyingCommodity": {
+      "type": "string",
+      "codeset": "CommodityCode",
+      "source_fields": [
+        "underlying_commodity"
+      ]
+    },
+    "ForwardPrice": {
+      "type": "number",
+      "minimum": 0,
+      "source_fields": [
+        "forward_price"
+      ]
+    },
+    "Unit": {
+      "type": "string",
+      "minLength": 1,
+      "source_fields": [
+        "unit"
+      ],
+      "required": false
+    },
+    "DeliveryType": {
+      "type": "string",
+      "enum": [
+        "CASH",
+        "PHYS"
+      ],
+      "source_fields": [
+        "delivery_type"
+      ],
+      "required": false
+    }
+  },
+  "SourceNote": "Local ANNA-DSB-style fixture for MH6822 Homework 2."
+}

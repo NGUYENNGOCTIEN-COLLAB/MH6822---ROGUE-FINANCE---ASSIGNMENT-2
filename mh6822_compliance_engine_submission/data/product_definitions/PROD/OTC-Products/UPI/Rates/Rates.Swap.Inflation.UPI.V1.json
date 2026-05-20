@@ -1,0 +1,32 @@
+{
+  "AssetClass": "Rates",
+  "InstrumentType": "Swap",
+  "UseCase": "Inflation",
+  "Level": "UPI",
+  "TemplateName": "Rates.Swap.Inflation",
+  "UPI": "RIN7FPQK3VWLM2YHN5JZ",
+  "Attributes": {
+    "NotionalCurrency": {
+      "type": "string",
+      "codeset": "ISOCurrencyCode",
+      "source_fields": [
+        "notional_currency"
+      ]
+    },
+    "NotionalAmount": {
+      "type": "number",
+      "minimum": 0,
+      "source_fields": [
+        "notional_amount"
+      ]
+    },
+    "ReferenceRate": {
+      "type": "string",
+      "codeset": "FpmlRatesReferenceRate",
+      "source_fields": [
+        "reference_rate"
+      ]
+    }
+  },
+  "SourceNote": "Local ANNA-DSB-style fixture for MH6822 Homework 2. Replace with cloned ANNA-DSB/Product-Definitions in production."
+}

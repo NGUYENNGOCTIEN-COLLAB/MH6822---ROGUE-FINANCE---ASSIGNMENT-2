@@ -1,0 +1,59 @@
+{
+  "AssetClass": "Rates",
+  "InstrumentType": "Cap_Floor",
+  "UseCase": "Floor",
+  "Level": "UPI",
+  "TemplateName": "Rates.Cap_Floor.Floor",
+  "UPI": "RFL5LM7KQVN8YH2WPF5J",
+  "Attributes": {
+    "NotionalCurrency": {
+      "type": "string",
+      "codeset": "ISOCurrencyCode",
+      "source_fields": [
+        "notional_currency"
+      ]
+    },
+    "NotionalAmount": {
+      "type": "number",
+      "minimum": 0,
+      "source_fields": [
+        "notional_amount"
+      ]
+    },
+    "StrikeRate": {
+      "type": "number",
+      "source_fields": [
+        "strike_rate"
+      ]
+    },
+    "ReferenceRate": {
+      "type": "string",
+      "codeset": "FpmlRatesReferenceRate",
+      "source_fields": [
+        "reference_rate"
+      ]
+    },
+    "ReferenceRateTermValue": {
+      "type": "integer",
+      "minimum": -999,
+      "maximum": 999,
+      "not": 0,
+      "source_fields": [
+        "reference_rate_term_value"
+      ]
+    },
+    "ReferenceRateTermUnit": {
+      "type": "string",
+      "enum": [
+        "DAYS",
+        "WEEK",
+        "MNTH",
+        "YEAR"
+      ],
+      "source_fields": [
+        "reference_rate_term_unit"
+      ]
+    }
+  },
+  "SourceNote": "Local ANNA-DSB-style fixture for MH6822 Homework 2."
+}

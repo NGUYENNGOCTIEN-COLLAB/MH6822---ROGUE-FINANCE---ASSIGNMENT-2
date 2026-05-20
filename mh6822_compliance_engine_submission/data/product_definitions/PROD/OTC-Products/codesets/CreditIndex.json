@@ -1,0 +1,15 @@
+{
+  "codeset": "CreditIndex",
+  "description": "Credit index identifiers for CDX/iTraxx index derivatives. Series numbers are validated separately.",
+  "values": [
+    "CDX.NA.IG",
+    "CDX.NA.HY",
+    "CDX.NA.XO",
+    "CDX.EM",
+    "iTraxx Europe",
+    "iTraxx Europe Crossover",
+    "iTraxx Europe Senior Financials",
+    "iTraxx Asia ex-Japan IG",
+    "iTraxx Australia"
+  ]
+}

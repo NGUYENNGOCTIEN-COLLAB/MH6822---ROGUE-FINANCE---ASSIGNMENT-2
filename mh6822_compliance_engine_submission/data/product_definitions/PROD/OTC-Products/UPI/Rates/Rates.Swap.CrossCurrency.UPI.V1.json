@@ -1,0 +1,53 @@
+{
+  "AssetClass": "Rates",
+  "InstrumentType": "Swap",
+  "UseCase": "CrossCurrency",
+  "Level": "UPI",
+  "TemplateName": "Rates.Swap.CrossCurrency",
+  "UPI": "RXC9PV2TKLM4QHN8WJF6",
+  "Attributes": {
+    "NotionalCurrencyLeg1": {
+      "type": "string",
+      "codeset": "ISOCurrencyCode",
+      "source_fields": [
+        "notional_currency_leg1"
+      ]
+    },
+    "NotionalAmountLeg1": {
+      "type": "number",
+      "minimum": 0,
+      "source_fields": [
+        "notional_amount_leg1"
+      ]
+    },
+    "NotionalCurrencyLeg2": {
+      "type": "string",
+      "codeset": "ISOCurrencyCode",
+      "source_fields": [
+        "notional_currency_leg2"
+      ]
+    },
+    "NotionalAmountLeg2": {
+      "type": "number",
+      "minimum": 0,
+      "source_fields": [
+        "notional_amount_leg2"
+      ]
+    },
+    "ReferenceRateLeg1": {
+      "type": "string",
+      "codeset": "FpmlRatesReferenceRate",
+      "source_fields": [
+        "reference_rate_leg1"
+      ]
+    },
+    "ReferenceRateLeg2": {
+      "type": "string",
+      "codeset": "FpmlRatesReferenceRate",
+      "source_fields": [
+        "reference_rate_leg2"
+      ]
+    }
+  },
+  "SourceNote": "Local ANNA-DSB-style fixture for MH6822 Homework 2. Replace with cloned ANNA-DSB/Product-Definitions in production."
+}

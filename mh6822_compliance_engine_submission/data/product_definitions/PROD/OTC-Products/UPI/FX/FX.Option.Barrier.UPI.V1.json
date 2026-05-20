@@ -1,0 +1,68 @@
+{
+  "AssetClass": "FX",
+  "InstrumentType": "Option",
+  "UseCase": "Barrier",
+  "Level": "UPI",
+  "TemplateName": "FX.Option.Barrier",
+  "UPI": "FOB4KQM7PVLN3HW2YJ8F",
+  "Attributes": {
+    "NotionalCurrency": {
+      "type": "string",
+      "codeset": "ISOCurrencyCode",
+      "source_fields": [
+        "notional_currency"
+      ]
+    },
+    "UnderlyingCurrencyPair": {
+      "type": "string",
+      "pattern": "^[A-Z]{3}/[A-Z]{3}$",
+      "source_fields": [
+        "underlying_currency_pair"
+      ]
+    },
+    "NotionalAmount": {
+      "type": "number",
+      "minimum": 0,
+      "source_fields": [
+        "notional_amount"
+      ]
+    },
+    "OptionType": {
+      "type": "string",
+      "enum": [
+        "CALL",
+        "PUT"
+      ],
+      "source_fields": [
+        "option_type"
+      ]
+    },
+    "StrikePrice": {
+      "type": "number",
+      "minimum": 0,
+      "source_fields": [
+        "strike_price"
+      ]
+    },
+    "BarrierType": {
+      "type": "string",
+      "enum": [
+        "KNOCK_IN",
+        "KNOCK_OUT",
+        "DOUBLE_KNOCK_IN",
+        "DOUBLE_KNOCK_OUT"
+      ],
+      "source_fields": [
+        "barrier_type"
+      ]
+    },
+    "BarrierLevel": {
+      "type": "number",
+      "minimum": 0,
+      "source_fields": [
+        "barrier_level"
+      ]
+    }
+  },
+  "SourceNote": "Local ANNA-DSB-style fixture for MH6822 Homework 2. Replace with cloned ANNA-DSB/Product-Definitions in production."
+}

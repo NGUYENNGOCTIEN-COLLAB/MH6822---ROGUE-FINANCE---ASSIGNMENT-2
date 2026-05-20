@@ -1,0 +1,71 @@
+{
+  "AssetClass": "Equity",
+  "InstrumentType": "Swap",
+  "UseCase": "TotalReturn_SingleIndex",
+  "Level": "UPI",
+  "TemplateName": "Equity.Swap.TotalReturn_SingleIndex",
+  "UPI": "ETI8KMQ3PVLN4HW2YJ7F",
+  "Attributes": {
+    "NotionalCurrency": {
+      "type": "string",
+      "codeset": "ISOCurrencyCode",
+      "source_fields": [
+        "notional_currency"
+      ]
+    },
+    "NotionalAmount": {
+      "type": "number",
+      "minimum": 0,
+      "source_fields": [
+        "notional_amount"
+      ]
+    },
+    "UnderlyingIndex": {
+      "type": "string",
+      "minLength": 2,
+      "maxLength": 64,
+      "source_fields": [
+        "underlying_index"
+      ]
+    },
+    "ReferenceRate": {
+      "type": "string",
+      "codeset": "FpmlRatesReferenceRate",
+      "source_fields": [
+        "reference_rate"
+      ]
+    },
+    "ReferenceRateTermValue": {
+      "type": "integer",
+      "minimum": -999,
+      "maximum": 999,
+      "not": 0,
+      "source_fields": [
+        "reference_rate_term_value"
+      ]
+    },
+    "ReferenceRateTermUnit": {
+      "type": "string",
+      "enum": [
+        "DAYS",
+        "WEEK",
+        "MNTH",
+        "YEAR"
+      ],
+      "source_fields": [
+        "reference_rate_term_unit"
+      ]
+    },
+    "ReturnType": {
+      "type": "string",
+      "enum": [
+        "PRICE",
+        "TOTAL"
+      ],
+      "source_fields": [
+        "return_type"
+      ]
+    }
+  },
+  "SourceNote": "Local ANNA-DSB-style fixture for MH6822 Homework 2. Replace with cloned ANNA-DSB/Product-Definitions in production."
+}

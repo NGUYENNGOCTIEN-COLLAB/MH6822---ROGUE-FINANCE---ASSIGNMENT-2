@@ -1,0 +1,67 @@
+{
+  "AssetClass": "Rates",
+  "InstrumentType": "Option",
+  "UseCase": "Swaption",
+  "Level": "UPI",
+  "TemplateName": "Rates.Option.Swaption",
+  "UPI": "RSW7XPK3LQNM4HV8JF2W",
+  "Attributes": {
+    "NotionalCurrency": {
+      "type": "string",
+      "codeset": "ISOCurrencyCode",
+      "source_fields": [
+        "notional_currency"
+      ]
+    },
+    "NotionalAmount": {
+      "type": "number",
+      "minimum": 0,
+      "source_fields": [
+        "notional_amount"
+      ]
+    },
+    "OptionType": {
+      "type": "string",
+      "enum": [
+        "PAYER",
+        "RECEIVER"
+      ],
+      "source_fields": [
+        "option_type"
+      ]
+    },
+    "StrikeRate": {
+      "type": "number",
+      "source_fields": [
+        "strike_rate"
+      ]
+    },
+    "UnderlyingTenorValue": {
+      "type": "integer",
+      "minimum": 1,
+      "source_fields": [
+        "underlying_tenor_value"
+      ]
+    },
+    "UnderlyingTenorUnit": {
+      "type": "string",
+      "enum": [
+        "DAYS",
+        "WEEK",
+        "MNTH",
+        "YEAR"
+      ],
+      "source_fields": [
+        "underlying_tenor_unit"
+      ]
+    },
+    "ReferenceRate": {
+      "type": "string",
+      "codeset": "FpmlRatesReferenceRate",
+      "source_fields": [
+        "reference_rate"
+      ]
+    }
+  },
+  "SourceNote": "Local ANNA-DSB-style fixture for MH6822 Homework 2. Replace with cloned ANNA-DSB/Product-Definitions in production."
+}

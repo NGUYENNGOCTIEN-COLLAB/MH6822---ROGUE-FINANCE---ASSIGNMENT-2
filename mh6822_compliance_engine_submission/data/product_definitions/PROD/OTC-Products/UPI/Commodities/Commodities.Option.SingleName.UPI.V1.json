@@ -1,0 +1,70 @@
+{
+  "AssetClass": "Commodities",
+  "InstrumentType": "Option",
+  "UseCase": "SingleName",
+  "Level": "UPI",
+  "TemplateName": "Commodities.Option.SingleName",
+  "UPI": "MOP4KMQ3PVLN4HW2YJ8F",
+  "Attributes": {
+    "NotionalCurrency": {
+      "type": "string",
+      "codeset": "ISOCurrencyCode",
+      "source_fields": [
+        "notional_currency"
+      ]
+    },
+    "NotionalAmount": {
+      "type": "number",
+      "minimum": 0,
+      "source_fields": [
+        "notional_amount"
+      ]
+    },
+    "UnderlyingCommodity": {
+      "type": "string",
+      "codeset": "CommodityCode",
+      "source_fields": [
+        "underlying_commodity"
+      ]
+    },
+    "OptionType": {
+      "type": "string",
+      "enum": [
+        "CALL",
+        "PUT",
+        "STRADDLE"
+      ],
+      "source_fields": [
+        "option_type"
+      ]
+    },
+    "StrikePrice": {
+      "type": "number",
+      "minimum": 0,
+      "source_fields": [
+        "strike_price"
+      ]
+    },
+    "Unit": {
+      "type": "string",
+      "minLength": 1,
+      "source_fields": [
+        "unit"
+      ],
+      "required": false
+    },
+    "DeliveryType": {
+      "type": "string",
+      "enum": [
+        "CASH",
+        "PHYS",
+        "OPTL"
+      ],
+      "source_fields": [
+        "delivery_type"
+      ],
+      "required": false
+    }
+  },
+  "SourceNote": "Local ANNA-DSB-style fixture for MH6822 Homework 2. Replace with cloned ANNA-DSB/Product-Definitions in production."
+}

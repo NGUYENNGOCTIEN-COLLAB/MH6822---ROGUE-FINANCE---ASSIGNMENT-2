@@ -1,0 +1,81 @@
+{
+  "AssetClass": "Rates",
+  "InstrumentType": "Swap",
+  "UseCase": "Basis",
+  "Level": "UPI",
+  "TemplateName": "Rates.Swap.Basis",
+  "UPI": "RBA8JLN4XPM2QHK7VTW3",
+  "Attributes": {
+    "NotionalCurrency": {
+      "type": "string",
+      "codeset": "ISOCurrencyCode",
+      "source_fields": [
+        "notional_currency"
+      ]
+    },
+    "NotionalAmount": {
+      "type": "number",
+      "minimum": 0,
+      "source_fields": [
+        "notional_amount"
+      ]
+    },
+    "ReferenceRateLeg1": {
+      "type": "string",
+      "codeset": "FpmlRatesReferenceRate",
+      "source_fields": [
+        "reference_rate_leg1"
+      ]
+    },
+    "ReferenceRateTermLeg1Value": {
+      "type": "integer",
+      "minimum": -999,
+      "maximum": 999,
+      "not": 0,
+      "source_fields": [
+        "reference_rate_term_leg1_value"
+      ]
+    },
+    "ReferenceRateTermLeg1Unit": {
+      "type": "string",
+      "enum": [
+        "DAYS",
+        "WEEK",
+        "MNTH",
+        "YEAR"
+      ],
+      "source_fields": [
+        "reference_rate_term_leg1_unit"
+      ]
+    },
+    "ReferenceRateLeg2": {
+      "type": "string",
+      "codeset": "FpmlRatesReferenceRate",
+      "source_fields": [
+        "reference_rate_leg2"
+      ]
+    },
+    "ReferenceRateTermLeg2Value": {
+      "type": "integer",
+      "minimum": -999,
+      "maximum": 999,
+      "not": 0,
+      "source_fields": [
+        "reference_rate_term_leg2_value"
+      ]
+    },
+    "ReferenceRateTermLeg2Unit": {
+      "type": "string",
+      "enum": [
+        "DAYS",
+        "WEEK",
+        "MNTH",
+        "YEAR"
+      ],
+      "source_fields": [
+        "reference_rate_term_leg2_unit"
+      ]
+    }
+  },
+  "SourceNote": "Local ANNA-DSB-style fixture for MH6822 Homework 2. Replace with cloned ANNA-DSB/Product-Definitions in production."
+}

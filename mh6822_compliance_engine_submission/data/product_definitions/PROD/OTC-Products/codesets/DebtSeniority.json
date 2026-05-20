@@ -1,0 +1,13 @@
+{
+  "codeset": "DebtSeniority",
+  "description": "Debt seniority codes for credit derivatives (CDS/CDX). Source: ISDA 2014 Credit Definitions and the ANNA-DSB credit asset class.",
+  "values": [
+    "SNRFOR",
+    "SNDB",
+    "SUBLT2",
+    "SECDOM",
+    "JUND",
+    "SUBT1",
+    "PREFT1"
+  ]
+}
